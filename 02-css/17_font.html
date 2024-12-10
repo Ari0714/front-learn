@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* body{
+            font-size: 80px;
+        } */
+
+        /* （宋体、楷体）、（italic、normal、oblique）（100-1000，lighter、normal、bold、bolder） */
+        .c1 {
+            font-size: 40px;
+            font-family: "微软雅黑";
+            font-style: italic;
+            font-weight: bold;
+            /* font: bold italic 40px "微软雅黑" */
+
+            color: red;
+
+            letter-spacing: 10px;
+            word-spacing: 5px;
+
+            text-decoration:line-through;
+            text-indent: 30px;
+            text-align: right;
+
+        }
+
+        /* （50px, normal, 1.667, 150%）; 最小0，过小会重叠；用数值；可继承
+         line-height x 行数 = 高
+         应用场景：多行文字间距，当行文字垂直居中（line-height = height）
+        */
+        .p1{
+            height: 100px;
+            font-size: 50;
+            background-color: skyblue;
+            line-height: 100px;
+        }
+
+    </style>
+
+    <link rel="stylesheet" href="outside2.css">
+</head>
+
+<body>
+
+    <p class="c1">111大米,1223</p>
+    <p class="c2">222</p>
+    <p class="c3">333</p>
+    <p class="c4">444</p>
+
+    <hr>
+
+    <p class="p1">est laborum assumenda deserunt fugiat, non amet fuga minima voluptas pariatur.</p>
+
+
+</body>
+
+</html>

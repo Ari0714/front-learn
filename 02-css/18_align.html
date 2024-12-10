@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* body{
+            font-size: 80px;
+        } */
+
+        /* line-height = height*2 - font-size - x（字体损耗） */
+        .c1{
+            font-size: 40px;
+            background-color: skyblue;
+            line-height: 555px;
+            height: 300px;
+        }
+
+        /* baseline(default), top，bottom, middle; vertical-align不能控制内部块级与文字，控制同一行元素*/
+        .c1{
+            font-size: 40px;
+            background-color: skyblue;
+            height: 300px;
+            vertical-align: bottom;
+        }
+
+    </style>
+
+    <link rel="stylesheet" href="outside2.css">
+</head>
+
+<body>
+
+    <p class="c1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam</p>
+
+    <div class="c1">
+        <span class="span2">Lorem ipsum dolor sit amet consectetur adipisicing elit</span>
+        <!-- 不控制 -->
+        <!-- <span class="span2">Lorem ipsum dolor sit amet consectetur adipisicing elit</span> -->
+    </div>
+    
+
+</body>
+
+</html>

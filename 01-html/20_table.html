@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- 
+ list
+ 1、order，unorder
+ 2、
+-->
+
+<body>
+
+    <table border="1" width="600" height="300" cellspacing="0">
+        <caption>student info</caption>
+
+        <thead width="600" height="40" align="left" valign="top">
+            <tr>
+                <th>name</th>
+                <th>sex</th>
+                <th>age</th>
+                <th>nation</th>
+                <th>policy_face</th>
+            </tr>
+        </thead>
+        
+        <tbody align="center" valign="middle">
+            <tr>
+                <td>zhangsan</td>
+                <td>male</td>
+                <td>18</td>
+                <td>China</td>
+                <td>xxx</td>
+            </tr>
+            <tr>
+                <td>Ari</td>
+                <td>male</td>
+                <td>18</td>
+                <td>Japan</td>
+                <td>xxx</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>sum: 2</td>
+            </tr>
+        </tfoot>
+
+    </table>
+
+
+
+<!-- cross column、row -->
+    <table border="1" width="600" height="300" cellspacing="0">
+        <caption>student info</caption>
+
+        <thead width="600" height="40" align="center" valign="top">
+            <tr>
+                <th colspan="2">name</th>
+                <!-- <th>sex</th> -->
+                <th>age</th>
+                <th>nation</th>
+                <th>policy_face</th>
+            </tr>
+        </thead>
+        
+        <tbody align="center" valign="middle">
+            <tr>
+                <td rowspan="2">zhangsan</td>
+                <td>male</td>
+                <td>18</td>
+                <td>China</td>
+                <td>xxx</td>
+            </tr>
+            <tr>
+                <td>Ari</td>
+                <td>male</td>
+                <td>18</td>
+                <td>Japan</td>
+                <td>xxx</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>sum: 2</td>
+            </tr>
+        </tfoot>
+
+    </table>
+
+
+</body>
+
+</html>

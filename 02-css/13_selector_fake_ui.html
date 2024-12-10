@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- ui -->
+    <style>
+       input:checked {
+        width: 50px;
+        height: 50px;
+       }
+
+      input:disabled {
+        background-color: red;
+      }
+      /* enabled , 不写 */
+      input:enabled {
+         background-color: green;
+      }
+
+
+      /* target */
+      div {
+         width: 400px;
+         height: 200px;
+         background-color: beige;
+      }
+
+      div:target{
+         background-color: green;
+      }
+
+
+      /* 语言伪类 */
+      p:lang(zh-CN){
+         color: brown;
+      }
+
+   </style>
+
+    <link rel="stylesheet" href="outside2.css">
+</head>
+
+<body>
+
+    <!-- ui伪类， -->
+      <input type="checkbox" name="" id="">
+      <input type="radio" name="gender">
+      <input type="radio" name="gender">
+      <hr>
+
+      <input type="text" name="" id="">
+      <input disabled type="text" name="" id=""><br><br>
+       <!-- 
+         1. :checked 被选中的复选框或单选按钮。
+         2. :enable 可用的表单元素（没有 disabled 属性）。
+         3. :disabled 不可用的表单元素（有 disabled 属性）。
+      -->
+
+      <!-- 目标伪类， -->
+      <a href="#1">1</a>
+      <a href="#2">2</a>
+      <a href="#3">3</a>
+      <a href="#4">4</a>
+
+      <div id="1">1</div><br>
+      <div id="2">2</div><br>
+      <div id="3">3</div><br>
+      <div id="4">4</div>
+      <br><hr>
+
+      <!-- 语言伪类， -->
+      <p lang="zh-CN">语言伪类</p>
+      <p lang="en">language fake class</p>
+  
+
+</body>
+
+</html>

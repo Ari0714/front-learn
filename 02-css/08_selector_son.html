@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ol>li{
+            color: red;
+            font-size: 20px;
+        }
+        .span_class>span{
+            color: red;
+            font-size: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="outside2.css">
+</head>
+
+<body>
+
+    <!-- 子代选择器，儿子层级> -->
+    <ol>
+        <li>123</li>
+        <li>345</li>
+        <li>789</li>
+        <span class="span_class">
+            <li>000</li>
+            <span>
+                <li>000-111</li>
+            </span>
+        </span>
+    </ol>
+
+    <ul>
+        <li>123</li>
+        <li>345</li>
+        <li>789</li>
+    </ul>
+
+</body>
+
+</html>

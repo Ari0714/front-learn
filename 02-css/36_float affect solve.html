@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .g1 {
+            /* solve1：set parent height */
+            /* height: 450px; */
+
+            /* solve1：set parent float， new issue */
+            /* float: left; */
+
+            /* solve1：set overflow， new issue，later real box  */
+            /* overflow: hidden; */
+
+            width: 500px;
+            /* font-size: 20px; */
+            background-color: grey;
+            border: 1px black solid;
+            
+        }
+        .gg {
+            height: 100px;
+            width: 100px;
+            margin: 10px;
+        }
+        .g2{
+            background-color: red;
+            float: left;
+        }
+        .g3{
+            background-color: green;
+            float: left;
+        }
+        .g4{
+            background-color: pink;
+            float: left;
+        }
+
+        /* clear：solve float issue。 prerequisite：g5 dont float*/
+        /* .g5{
+            background-color: blue;
+            clear: both;
+        } */
+
+        /* recommend： principle like forth*/
+        .g1::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!--浮动 affect solve: 父空间塌陷
+    1. 方案一： 给父元素指定高度。
+    2. 方案二： 给父元素也设置浮动，带来其他影响。
+    3. 方案三： 给父元素设置 overflow:hidden 。
+    4. 方案四： 在所有浮动元素的最后面，添加一个块级元素，并给该块级元素设置 clear:both 。
+    5. 方案五： 给浮动元素的父元素，设置伪元素，通过伪元素清除浮动，原理与方案四相同。===> 推荐使用
+    -->
+     <div class="g1">
+        <div class=" gg g2">111</div>
+        <div class=" gg g3">222</div>
+        <div class=" gg g4">333</div>
+        <div class=" gg g5">444</div>
+    </div>
+     <br>
+
+</body>
+
+</html>

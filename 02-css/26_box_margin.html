@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        /* box content, paddind，border、margin 
+           1.box content, paddind，border affect by background-color
+           2.mix max dont use with width
+           3.paddind: left、right、top、bottom(20px 20px 30px 30px: 上右下左)
+           4、border：default width 3px；style、width、color
+        */
+        .c1{
+            width: 400px;
+            /* min-width: 200px;
+            max-width: 600px; */
+            height: 200px;
+            /* min-height: 100px;
+            max-height: 300px; */
+            font-size: 20px;
+            padding: 20px;
+            padding-left: 20px;
+            padding: 20px 20px 30px 30px;
+            border: 20px dashed pink;
+            background-color: grey;
+            margin: 10px;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <!-- 
+    box model: margin
+    -->
+    <div class="c1">hahaa1</div>
+
+    <div class="c2">hahaa2</div>
+
+    <div class="c3">hahaa3</div>
+
+</body>
+
+</html>

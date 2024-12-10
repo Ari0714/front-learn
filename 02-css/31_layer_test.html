@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .c1 {
+            width: 400px;
+            height: 400px;
+            font-size: 20px;
+            background-color: grey;
+            overflow: hidden;
+        }
+        .c2 {
+            width: 100px;
+            height: 100px;
+            font-size: 5px;
+            background-color: orange;
+            margin: 0 auto;
+            margin-top: 150px;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .d1 {
+            width: 400px;
+            height: 400px;
+            font-size: 20px;
+            background-color: grey;
+            text-align: center;
+            line-height: 400px;
+        }
+        .d2 {
+            width: 100px;
+            height: 100px;
+            font-size: 5px;
+            background-color: orange;
+        }
+
+        /*  word & pic */
+        .e1 {
+            width: 400px;
+            height: 400px;
+            font-size: 0px;
+            background-color: grey;
+            text-align: center;
+            line-height: 400px;
+        }
+        .e3{
+            vertical-align: middle;
+        }
+        .e2{
+            font-size: 20px;
+            vertical-align: middle;
+        }
+
+        /* 元素留白问题 */
+        .f1 {
+            background-color: red;
+        }
+        .f2 {
+            background-color: green;
+        }
+        .f3 {
+            background-color:  pink;
+        }
+        .f0 {
+            font-size: 0px;
+        }
+        span {
+            font-size: 20px;
+        }
+
+        /* 行内快幽灵空白问题 */
+        .g1 {
+            width: 600px;
+            background-color: skyblue;
+        }
+        .g2 {
+            height: 200px;
+            vertical-align: bottom;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+   <div class="c1">
+    <div class="c2">inner</div>
+   </div>
+   <br>
+
+   <div class="d1">
+    <span class="d2">inner</span>
+   </div>
+   <br>
+
+   <div class="e1">
+    <span class="e2">xxxx</span>
+    <img class="e3" src="../img/悟空.jpg" alt="">
+   </div>
+   <br>
+
+   <!-- 元素留白问题: 继承div：1、不换行；2、div font-size=0 -->
+    <div class="f0">
+        <span class="f1">111</span>
+        <span class="f2">222</span>
+        <span class="f3">333</span>
+    </div>
+    <br>
+  
+    <!-- 行内快幽灵空白问题: 行内快元素与文本基线对齐，图片下方的空白xg -->
+     <div class="g1">
+        <img class="g2" src="../img/小姐姐.gif" alt=""> xxgg
+     </div>
+
+</body>
+
+</html>

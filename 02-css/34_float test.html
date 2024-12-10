@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .g1 {
+            width: 800px;
+            height: 400px;
+            font-size: 20px;
+            background-color: grey;
+            padding: 20px;
+            overflow: hidden;
+        }
+        .gg {
+            margin: 10px;
+
+            /* 所有块都浮动 */
+            float: left;  
+        }
+        .g2{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+
+            /* 单独设置，块动文字不动 */
+            /* float: left */  
+        }
+        .g3{
+            height: 100px;
+            width: 100px;
+            background-color: green;
+            /* float: right; */
+        }
+        .g4{
+            height: 100px;
+            width: 100px;
+            background-color: pink;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!--浮动 test -->
+     <div class="g1">
+        <div class=" gg g2">111</div>
+        <div class=" gg g3">222</div>
+        <div class=" gg g4">333</div>
+    </div>
+     <br>
+
+</body>
+
+</html>

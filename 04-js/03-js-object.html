@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="text/javascript">
+
+
+        /**
+        * object：内建、宿主、自定义
+        */
+        // method1
+        var obj = new Object();
+        obj.name = "aa";
+        obj.name = "bb";
+        obj.age = 12;
+        delete obj.age;
+        // alert(obj.name);
+        // alert(obj.age);
+
+        // method2
+        var obj2 = {
+            name : "coco2",
+            age : 12
+        };
+        // alert(obj2.name)
+        var obj3 = {name : "coco3",age : 12};
+        // alert(obj3.name);
+        
+
+        /**
+        *  method
+        */
+        // method1
+        var sum = function(a,b) {return a+b};
+        // alert(sum(1,2))
+
+        // nameless func
+        // (function(){
+        //     alert(1);
+        //     alert(2);
+        // })()
+        // (function(a,b){
+        //     alert(a+b)
+        // })(1,2)
+
+        // 作用域：全局作用域、函数作用域
+        // function func2() {
+        // var func2a = 2
+        // }
+        // func2
+        // alert(func2a)
+
+       /**
+        *  数组：Array
+        */
+        var arr = new Array;
+        arr = [1,2,3,4]
+        var arr = new Array(1,2,3);
+        var arr2 = [1,2,3]
+        arr[0] = 0;
+        arr[1] = 1;
+        arr[2] = 2;
+        // alert(typeof arr)
+        // alert(arr[1])
+
+        //push、unshift(add last、first position)、pop（delete last position）、
+        // shift（delete first return delete-element）
+        // arr.push(4,5,6)
+        // arr.unshift(4,5,6)
+        // arr.pop()
+        // arr.shift()
+
+        // foreach
+        // for (let index = 0; index < arr.length; index++) {
+        //     alert(arr[index]);
+        // };
+        // arr.forEach(function(a){
+        //     alert(a)
+        // });
+
+        // slice([}, dont change original)、splice(（start-index，num），change original)
+        // concat: dont change original,  join: dont change original
+        // reverse: change original, sort：change original(obey utf-8，1,11,2,3,4)
+        var arr3 = [1,2,3,4,5]
+        var arr31 = arr3.slice(0,2)
+        // alert(arr31)
+        var arr4 = [1,2,3,4,5]
+        var arr41 = arr4.splice(0,2)
+        // alert(arr4)
+        // alert(arr41)
+
+        // concat
+        var arr5 = [1,2,3,4]
+        var arr6 = [5,6]
+        var arr7 = arr5.concat(arr6,[9,10],11)
+        // alert(arr7)
+
+        // join
+        var arr8 = arr5.join("-")
+        // alert(arr8)
+
+        // reverse
+        arr5.reverse();
+        // alert(arr5)
+
+        // reverse
+        var arr9 = [1,2,3,4,11]
+        arr9.sort();
+        // alert(arr9)
+
+        // invoke: ()、call（）、apply（）
+        var fun4 = function(){alert('111')};
+        // fun4.call()
+        // fun4.apply()
+        // fun4()
+
+        // data
+        var d1 = new Date();
+        // alert(d1.getDate()); // dd
+        // alert(d1.getDay()) // dd in weekdays
+
+        // math
+        // alert(Math.PI);
+        // alert(Math.abs(-2));
+
+        // wrap class: String()、Number()、Boolean()
+        var w1 = new String("1")
+        var w2 = new String(123)
+        var w3 = new String(true)
+        alert(w2)
+        
+        // string method
+        
+
+    </script>
+</head>
+
+<body>
+
+    <!-- <button onclick="alert('im button alert')">click me</button>
+
+    <a href="javascript:alert('im link alert')">click me again</a>
+
+    <a href="javascript:;">click me again no end</a> -->
+
+</body>
+</html>

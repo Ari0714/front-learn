@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 伪元素类， -->
+    <style>
+       p:first-letter {
+        width: 50px;
+        height: 50px;
+        color: red;
+       }
+
+       .p2::first-line {
+        width: 50px;
+        height: 50px;
+        color: red;
+       }
+
+       .p3::selection {
+        width: 50px;
+        height: 50px;
+        color: pink;
+       }
+
+       input::placeholder {
+        width: 50px;
+        height: 50px;
+        color: pink;
+       }
+       
+       span::before{
+         content: "$";
+       }
+       span::after{
+         content: ".00";
+       }
+
+   </style>
+
+    <link rel="stylesheet" href="outside2.css">
+</head>
+
+<body>
+
+    <!-- 伪元素类，z注意双冒号 -->
+    <p>Lorem ipsum dolor sit.</p>
+    <p class="p2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati consequatur harum fugit commodi, dolorum cupiditate rem possimus sunt, eligendi odit sit, temporibus omnis iste pariatur rerum nam dicta totam unde?</p>
+    <p class="p3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati consequatur harum fugit commodi, dolorum cupiditate rem possimus sunt, eligendi odit sit, temporibus omnis iste pariatur rerum nam dicta totam unde?</p>
+    <input type="text" name="" id="" placeholder="please input username">
+    <br><hr>
+    <span>100</span><br>
+    <span>200</span><br>
+    <span>300</span>
+
+    <!-- 
+      ::first-letter 选中元素中的第一个文字。
+      ::first-line 选中元素中的第一行文字。
+      ::selection 选中被鼠标选中的内容。
+      ::placeholder 选中输入框的提示文字。
+      ::before 在元素最开始的位置，创建一个子元素（必须用 content 属性指定内容）。
+      ::after 在元素最后的位置，创建一个子元素（必须用 content 属性指定内容）。
+    -->
+
+</body>
+
+</html>
