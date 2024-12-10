@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- 
+ form
+ 1、
+ 2、
+-->
+
+<body>
+
+    <form action="http://baidu.com/s">
+        <input type="text" name="wd" id="">
+        <button>search baidu</button>
+    </form>
+
+    <form action="http://search.jd.com/search">
+        <input type="text" name="keyword" id="">
+        <button>search jd</button>
+    </form>
+
+    <hr>
+
+    <!-- test -->
+     <form action="http://search.jd.com/search" target="_self">
+        
+        <label for="us">username: </label>
+        <input type="text" name="username" id="us" value="dafault-value" maxlength="100"><br>
+        <label>passwd: <input type="password" name="passwd" id=""></label><br>
+        sex:
+        <input type="radio" name="gender" value="male" id="" checked>male
+        <input type="radio" name="gender" value="famale" id="">famale <br>
+        hobby:
+        <input type="checkbox" name="hobby" id="" value="smoke"> smoke
+        <input type="checkbox" name="hobby" id="" value="drink"> drink
+        <input type="checkbox" name="hobby" id="" value="game"> game <br>
+
+        <!-- hidden -->
+        <input type="hidden" name="hidden_name" id="" value="hidden_value">
+
+        other:
+        <textarea name="other" id="" cols="30" rows="3"></textarea><br>
+        nation:
+        <select name="place" id="">
+            <option value="hebei">hebei</option>
+            <option value="hubei" selected>hubei</option>
+            <option value="guangdong">guangdong</option>
+        </select><br>
+        disabled:<input disabled ="text" name="" id=""><br>
+
+        <fieldset>
+            <legend>legend</legend>
+            username: <input type="text" name="" id="">
+        </fieldset>
+
+        <button>submit</button>
+        <button type="reset">reset</button>
+        <input type="submit" name="" id="" value="input-submit">
+        <input type="reset" name="" id="" value="input-reset">
+        <button type="button">ordinary button</button>
+     </form>
+
+</body>
+
+</html>

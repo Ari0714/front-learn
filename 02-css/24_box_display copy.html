@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        /* box display: none、block、line、inline-block */
+        /* 块：occupy 1 line，width、height effect */
+        .c1{
+            width: 100px;
+            height: 100px;
+            font-size: 20px;
+            background-color: pink;
+        }
+        .c2{
+            width: 100px;
+            height: 100px;
+            font-size: 16px;
+            background-color: green;
+        }
+        .c3{
+            width: 100px;
+            height: 100px;
+            font-size: 20px;
+            background-color:rebeccapurple;
+        }
+        .c4{
+            width: 100px;
+            height: 100px;
+            font-size: 20px;
+            background-color: red;
+        }
+
+        /* 行：share 1 line，width、height no effect 
+           行内快：share 1 line，width、height effect
+        */
+        .a1{
+            width: 100px;
+            height: 100px;
+            font-size: 20px;
+            display: inline-block;
+            background-color: red;
+        }
+        .a2{
+            width: 100px;
+            height: 100px;
+            font-size: 20px;
+            display: inline-block;
+            background-color: red;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <!-- 
+    box model: display
+    -->
+    <div class="c1">hahaa1</div>
+    <div class="c2">hahaa2</div>
+    <div class="c3">hahaa3</div>
+    <div class="c4">hahaa4</div>
+    <hr>
+
+    <a class="a1" href="http://baidu.com">go baidu</a>
+    <a class="a2" href="http://jd.com">go jd</a>
+</body>
+
+</html>

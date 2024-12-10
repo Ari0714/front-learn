@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       div>p:first-child{
+        color: red;
+       }
+    </style>
+
+    <!-- 没符合条件的 -->
+   <style>
+      .class2>p:first-child{
+      color: red;
+      }
+   </style>
+
+   <!-- last -->
+   <style>
+      .class3>p:last-child{
+      color: red;
+      }
+   </style>
+
+   <!-- last 1, n(全部), 2n，2n+1 -->
+   <style>
+      .class3>p:nth-child(2){
+      color: red;
+      }
+   </style>
+   
+    <!-- first-of-type，last-of-type -->
+    <style>
+      .class4>p:first-of-type{
+      color: red;
+      }
+   </style>
+
+    <!-- 排除：not() -->
+    <style>
+      .class5>p:not(.fail){
+      color: red;
+      }
+   </style>
+
+    <link rel="stylesheet" href="outside2.css">
+</head>
+
+<body>
+
+    <!-- 结构伪类，  -->
+      <div>
+         <p>1</p>
+         <p>2</p>
+         <p>3</p>
+         <span>
+            <p>4</p>
+         </span>
+      </div>
+      <hr>
+
+      <div class="class2">
+         <h1>0</h1>
+         <p>1</p>
+         <p>2</p>
+         <p>3</p>
+         <span>
+            <p>4</p>
+         </span>
+      </div>
+      <hr>
+
+      <div class="class3">
+         <h1>0</h1>
+         <p>1</p>
+         <p>2</p>
+         <p>3</p>
+         <p>5</p>
+      </div>
+      <hr>
+      
+      <div class="class4">
+         <h1>0</h1>
+         <p>1</p>
+         <p>2</p>
+         <p>3</p>
+         <p>5</p>
+      </div>
+      <hr>
+   
+      <!-- 
+      1. :nth-last-child(n) 所有兄弟元素中的倒数第 n 个。
+      2. :nth-last-of-type(n) 所有同类型兄弟元素中的 倒数第n个 。
+      3. :only-child 选择没有兄弟的元素（独生子女）。
+      4. :only-of-type 选择没有同类型兄弟的元素。
+      5. :root 根元素。
+      6. :empty 内容为空元素（空格也算内容）。
+      -->
+
+      <!-- 否定伪类 -->
+      <div class="class5">
+         <h1>0</h1>
+         <p class="fail">1</p>
+         <p>2</p>
+         <p>3</p>
+         <p>5</p>
+      </div>
+
+      <!-- ui伪类 -->
+      <div class="class6">
+         <h1>0</h1>
+         <p class="fail">1</p>
+         <p>2</p>
+         <p>3</p>
+         <p>5</p>
+      </div>
+
+</body>
+
+</html>

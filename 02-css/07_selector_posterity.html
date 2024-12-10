@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ol {
+            color: red;
+            font-size: 20px;
+        }
+        ol span{
+            color: yellow;
+            font-size: 20px;
+        }
+        ol span.span_class{
+            color: chocolate;
+            font-size: 20px;
+        }
+        ol span#id_class{
+            color: pink;
+            font-size: 20px;
+        }
+        ul {
+            color: green;
+            font-size: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="outside2.css">
+</head>
+
+<body>
+
+    <!-- 后代选择器，全部层级，.class, id#, 注意标签一起不加空格-->
+    <ol>
+        <li>123</li>
+        <li>345</li>
+        <li>789</li>
+        <span>
+            <li>000</li>
+        </span>
+        <span class="span_class">
+            <li>111</li>
+        </span>
+        <span id="id_class">
+            <li>222</li>
+        </span>
+    </ol>
+
+    <ul>
+        <li>123</li>
+        <li>345</li>
+        <li>789</li>
+    </ul>
+
+
+</body>
+
+</html>

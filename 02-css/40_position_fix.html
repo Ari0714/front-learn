@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>37_float_test.html</title>
+
+    <style>
+
+        .c1 {
+            width: 600px;
+            height: 600px;
+            background-color: skyblue;
+            padding: 10px;
+        }
+    
+        .c2 {
+            width: 80px;
+            height: 80px;
+            background-color: red;
+            margin: 10px;
+        }
+        .c3 {
+            width: 80px;
+            height: 80px;
+            background-color: green;
+            margin: 10px;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+        }
+        .c4 {
+            width: 80px;
+            height: 80px;
+            background-color: yellowgreen;
+            margin: 10px; 
+        }
+
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- 固定定位：在视口固定住
+     1、类似float起来的效果（脱离文档流，对其他元素影响），覆盖其他元素，其他元素补位
+     3、left right不能一起使用，top bottom不能一起
+     4、能与margin一起使用，但不能与float使用，float失效
+     5、无论什么元素设置绝对定位后为定位元素：默认宽高被内容撑开，能自由设置宽高
+    -->
+    <div class="c1">
+        <div class="c2">11</div>
+        <div class="c3">22</div>
+        <div class="c4">33</div>
+    </div>
+     
+
+</body>
+
+</html>

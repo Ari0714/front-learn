@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .c1{
+            width: 400px;
+            height: 400px;
+            font-size: 20px;
+            padding: 20px;
+            background-color: grey;
+        }
+        .c1-inner{
+            width: 20px;
+            height: 20px;
+            font-size: 5px;
+            background-color: orange;
+            margin: 10px;
+        }
+
+        .c2{
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            padding: 20px;
+            background-color: blue;
+        }
+        .c21{
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            padding: 20px;
+            background-color: grey;
+            margin-top: 10px;
+        }
+        .c22{
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            padding: 20px;
+            background-color: red;
+        }
+
+        .c3{
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            background-color: skyblue;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        .c4{
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            background-color: skyblue;
+            /* margin-left: auto; */
+            margin: auto;
+        }
+
+        .c5{
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            background-color: black;
+            /* margin-left: auto; */
+            margin-top: -100px;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <!-- 
+    1. 子元素的 margin ，是参考父元素的 content 计算的。（因为是父亲的 content 中承装着 子元素）
+    2. 上 margin 、左 margin ：影响自己的位置(上左固定死)；下 margin 、右 margin ：影响后面兄弟元素的位置。
+    3. 块级元素、行内块元素，均可以完美地设置四个方向的 margin ；但行内元素，左右 margin 可以完美设置，上下 margin 设置无效。
+    4. margin 的值也可以是 auto ，如果给一个块级元素设置左右 margin 都为 auto ，该块级元素会在父元素中水平居中。
+    5. margin 的值可以是负值。 
+    -->
+
+    <div class="c1">
+        <div class="c1-inner">111-inner</div>
+    </div>
+    <br>
+
+    <div class="c2"></div>
+    <div class="c21"></div>
+    <div class="c22"></div>
+    <br>
+
+    <span class="c3">12234</span>
+    <br>
+    
+    <div class="c4"></div>
+    <br>
+
+    <div class="c5"></div>
+
+</body>
+
+</html>

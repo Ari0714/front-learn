@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .c1{
+            width: 400px;
+            height: 400px;
+            font-size: 20px;
+            background-color: grey;
+            /* border: 1px solid red; */
+            /* padding: 1px; */
+            overflow: hidden;
+        }
+        .c1-inner1{
+            width: 100px;
+            height: 100px;
+            font-size: 5px;
+            background-color: orange;
+            margin-top: 30px
+        }
+        .c2-inner2{
+            width: 100px;
+            height: 100px;
+            font-size: 5px;
+            background-color: red;
+            /* margin-bottom: 30px; */
+        }
+
+        /*  */
+        .c2{
+            width: 400px;
+            height: 400px;
+            font-size: 20px;
+            background-color: gray;
+            overflow: hidden;
+        }
+        .c2-inner1{
+            width: 100px;
+            height: 100px;
+            font-size: 5px;
+            background-color: orange;
+            margin-bottom: 40px;
+        }
+        .c2-inner2{
+            width: 100px;
+            height: 100px;
+            font-size: 5px;
+            background-color: red;
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- 
+    1、塌陷：第一个子元素的 上 会作用在父亲，最后一个子元素 下 会作用在父亲上
+    2、解决：
+      1、父设置 ！= 0 的border或padding
+      2、overflow = hidden
+    -->
+    <div class="c1">
+        <div class="c1-inner1">111-inner</div>
+        <div class="c2-inner2">222-inner</div>
+    </div>
+    <br>
+
+    <!-- margin 合并问题：上下会合并，取最大值 
+     1、解决：只用一个
+    -->
+    <div class="c2">
+        <div class="c2-inner1">111-inner</div>
+        <div class="c2-inner2">222-inner</div>
+    </div>
+    <br>
+
+    
+     
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* [title]{
+            color: red;
+        } */
+        /* [title="11"]{
+            color: red;
+        } */
+        /* [title^="1"]{
+            color: red;
+        } */
+        /* [title$="5"]{
+            color: red;
+        } */
+        [title*="5"]{
+            color: red;
+        }
+    </style>
+    <link rel="stylesheet" href="outside2.css">
+</head>
+
+<body>
+
+    <!-- 属性选择器  -->
+    <div title="abc">111</div>
+    <div title="11">222</div>
+    <div title="12">333</div>
+    <div title="45">444</div>
+    <div title="35">555</div>
+    <div title="12245">666</div>
+
+</body>
+
+</html>

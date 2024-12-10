@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        /* table attribute */
+        .table1{
+            border-width: 1px;
+            border-color: green;
+            border-style: solid;
+            /* border: 1px green solid; */
+        }
+
+        th,td{
+            border-width: 1px;
+            border-color: green;
+            border-style: solid;
+            /* border: 1px green solid; */
+        }
+
+        /* also can use in element */
+        span,p{
+            border-width: 2px;
+            border-color: orange;
+            border-style: dashed;
+        }
+
+        /* talbe exclusive */
+        .table2{
+            border-width: 1px;
+            border-color: red;
+            border-style: solid; 
+
+            width: 600px;
+            table-layout: fixed;
+
+            /* 2 border space px, has different color*/
+            border-spacing: 0px;
+
+            /* 2 collapse space */
+            border-collapse: collapse;
+
+            /* effect: dont collapse border */
+            empty-cells: hide;
+
+            caption-side: bottom;
+
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-- table exclusive -->
+    <table class="table2">
+        <caption>person info</caption>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>age</th>
+                <th>sex</th>
+                <th>profession</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>coco</td>
+                <td>18</td>
+                <td>male</td>
+                <td>Lorem ipsum dolor sit amet.</td>
+            </tr>
+            <tr>
+                <td>coco2</td>
+                <td>19</td>
+                <td>female</td>
+                <td>Lorem ipsum dolor sit amet.</td>
+            </tr>
+            <tr>
+                <td>coco3</td>
+                <td>67</td>
+                <td>male</td>
+                <td>Lorem ipsum dolor sit amet.</td>
+            </tr>
+            <tr>
+                <td>coco4</td>
+                <td>67</td>
+                <td>male</td>
+                <td>Lorem ipsum dolor sit amet.</td>
+            </tr>
+            
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+    <br><hr>
+
+
+    <table class="table1">
+        <caption>person info</caption>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>age</th>
+                <th>sex</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>coco</td>
+                <td>18</td>
+                <td>male</td>
+            </tr>
+            <tr>
+                <td>coco2</td>
+                <td>19</td>
+                <td>female</td>
+            </tr>
+            <tr>
+                <td>coco3</td>
+                <td>67</td>
+                <td>male</td>
+            </tr>
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+    <br><hr>
+
+    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, doloremque.</span>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, doloremque.</p>
+    
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>37_float_test.html</title>
+
+    <style>
+
+        .c1 {
+            width: 600px;
+            height: 600px;
+            background-color: skyblue;
+            padding: 10px;
+        }
+    
+        .c2 {
+            width: 80px;
+            height: 80px;
+            background-color: red;
+            margin: 10px;
+        }
+        .c3 {
+            width: 80px;
+            height: 80px;
+            background-color: green;
+            margin: 10px;
+            position: relative;
+            left: 30px;
+            top: 30px;
+        }
+        .c4 {
+            width: 80px;
+            height: 80px;
+            background-color: yellowgreen;
+            margin: 10px;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- 相对定位
+     1、cover 其他元素（两个、后写覆盖先写）
+     2、left right不能一起使用，top bottom不能一起
+     3、相对定位可以各margin、float一起使用，但不推荐
+    -->
+    <div class="c1">
+        <div class="c2">11</div>
+        <div class="c3">22</div>
+        <div class="c4">33</div>
+    </div>
+     
+
+</body>
+
+</html>

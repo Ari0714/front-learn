@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .g1 {
+            width: 800px;
+            height: 400px;
+            font-size: 20px;
+            background-color: grey;
+            padding: 20px;
+        }
+        .g2{
+            height: 100px;
+            background-color: red;
+        }
+        .g3{
+            background-color: green;
+            float: left;
+        }
+        .g4{
+            background-color: pink;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!--浮动
+    1. 🤢脱离文档流。(块动，文字不动)
+    2. 😊不管浮动前是什么元素，浮动后：默认宽与高都是被内容撑开（尽可能小），而且可以设置宽高。
+    3. 😊不会独占一行，可以与其他元素共用一行。
+    4. 😊不会 margin 合并，也不会 margin 塌陷，能够完美的设置四个方向的 margin 和 padding 。
+    5. 😊不会像行内块一样被当做文本处理（没有行内块的空白问题）。
+        -->
+     <div class="g1">
+        <div class="g2">111</div>
+        <div class="g3">222</div>
+        <div class="g4">333</div>
+    </div>
+     <br>
+
+</body>
+
+</html>

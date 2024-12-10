@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .g1 {
+            width: 400px;
+            /* font-size: 20px; */
+            background-color: grey;
+            border: 1px black solid;
+            /* overflow: hidden; */
+        }
+        .gg {
+            height: 100px;
+            width: 100px;
+            margin: 10px;
+            /* float: left; */
+        }
+        .g2{
+            background-color: red;
+            float: left;
+        }
+        .g3{
+            background-color: green;
+            float: left;
+        }
+        .g4{
+            background-color: pink;
+            float: left;
+        }
+        .g5{
+            background-color: blue;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!--浮动 affect
+    1、对兄弟元素的影响： 后面的兄弟元素，会占据浮动元素之前的位置，在浮动元素的下面(文字被甩出来)；对前面的兄弟
+    无影响。
+    2、对父元素的影响： 不能撑起父元素的高度，导致父元素高度塌陷；但父元素的宽度依然束缚浮动的元
+    素。
+    -->
+     <div class="g1">
+        <div class=" gg g2">111</div>
+        <div class=" gg g3">222</div>
+        <div class=" gg g4">333</div>
+        <div class=" gg g5">444</div>
+    </div>
+     <br>
+
+</body>
+
+</html>

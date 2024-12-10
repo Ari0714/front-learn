@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>37_float_test.html</title>
+
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .parentFix::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .leftFix {
+            float: left;
+        }
+
+        .rightFix {
+            float: right;
+        }
+
+        .conrainer {
+            width: 960px;
+            /* height: 960px; */
+            /* background-color: pink; */
+            margin: 0 auto;
+            text-align: center;
+
+        }
+
+        .log {
+            width: 200px;
+            height: 80px;
+            background-color: grey;
+            line-height: 80px;
+        }
+
+        .banner1 {
+            width: 540px;
+            height: 80px;
+            background-color: grey;
+            margin: 0 10px;
+            line-height: 80px;
+        }
+
+        .banner2 {
+            width: 200px;
+            height: 80px;
+            background-color: grey;
+            line-height: 80px;
+        }
+
+        .left-up1 {
+            width: 368px;
+            height: 198px;
+            /* background-color: grey; */
+            border: 1px solid black;
+            margin-top: 10px;
+            line-height: 200px;
+        }
+
+        .left-up2 {
+            width: 368px;
+            height: 198px;
+            /* background-color: grey; */
+            border: 1px solid black;
+            margin-top: 10px;
+            margin-left: 10px;
+            line-height: 200px;
+        }
+
+        .left-down1 {
+            width: 178px;
+            height: 198px;
+            /* background-color: grey; */
+            border: 1px solid black;
+            margin-top: 10px;
+            line-height: 200px;
+        }
+
+        .left-down2 {
+            width: 178px;
+            height: 198px;
+            /* background-color: grey; */
+            border: 1px solid black;
+            margin-top: 10px;
+            margin-left: 10px;
+            line-height: 200px;
+        }
+
+        .left-down3 {
+            width: 178px;
+            height: 198px;
+            /* background-color: grey; */
+            border: 1px solid black;
+            margin-top: 10px;
+            margin-left: 10px;
+            line-height: 200px;
+        }
+
+        .left-down4 {
+            width: 178px;
+            height: 198px;
+            /* background-color: grey; */
+            border: 1px solid black;
+            margin-top: 10px;
+            margin-left: 10px;
+            line-height: 200px;
+        }
+
+        .right1 {
+            width: 198px;
+            height: 128px;
+            /* background-color: grey; */
+            border: 1px solid black;
+            margin-top: 10px;
+            margin-left: 10px;
+            line-height: 128px;
+        }
+        .right2 {
+            width: 198px;
+            height: 128px;
+            /* background-color: grey; */
+            border: 1px solid black;
+            margin-top: 10px;
+            margin-left: 10px;
+            line-height: 128px;
+        }
+        .right3 {
+            width: 198px;
+            height: 128px;
+            /* background-color: grey; */
+            border: 1px solid black;
+            margin-top: 10px;
+            margin-left: 10px;
+            line-height: 128px;
+        }
+
+        .footer {
+            height: 60px;
+            background-color: grey;
+            margin-top: 10px;
+            line-height: 60px;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- container -->
+    <div class="conrainer">
+        <!-- header -->
+        <div class="head parentFix">
+            <div class="log leftFix">
+                logo
+            </div>
+            <div class="banner1 leftFix">
+                banner1
+            </div>
+            <div class="banner2 leftFix">
+                banner2
+            </div>
+        </div>
+        <!-- content -->
+        <div class="content parentFix">
+            <!-- left -->
+            <div class="left leftFix">
+                <!-- left-up -->
+                <div class="left-up parentFix">
+                    <div class="left-up1 leftFix">item 1</div>
+                    <div class="left-up2 leftFix">item 2</div>
+                </div>
+
+                <!-- left-down -->
+                <div class="left-down parentFix">
+                    <div class="left-down1 leftFix">item 3</div>
+                    <div class="left-down2 leftFix">item 4</div>
+                    <div class="left-down3 leftFix">item 5</div>
+                    <div class="left-down4 leftFix">item 6</div>
+                </div>
+
+            </div>
+
+            <!-- right -->
+            <div class="right leftFix">
+                <div class="right1">item 7</div>
+                <div class="right2">item 8</div>
+                <div class="right3">item 9</div>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <div class="footer">
+            footer
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

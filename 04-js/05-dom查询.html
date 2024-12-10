@@ -1,0 +1,295 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Untitled Document</title>
+	<link rel="stylesheet" type="text/css" href="style/css.css" />
+	<script type="text/javascript">
+
+		window.onload = function () {
+
+			//查找#bj节点
+			// var btn01 = document.getElementById('btn01');
+			// btn01.onclick = function(){
+			// 	var btnBj = document.getElementById('bj');
+			// 	alert(btnBj.innerHTML);
+			// };
+
+			//查找所有li节点
+			// var btn02 = document.getElementById('btn02');
+			// btn02.onclick = function(){
+			// 	var allLi = document.getElementsByTagName('li');
+			// 	// alert(allLi);
+			// 	// alert(allLi.length);
+			// 	for (var i = 0; i < allLi.length; i++) {
+			// 		// const element = array[index];
+			// 		alert(allLi[i].innerHTML);
+			// 	}
+			// }
+
+
+			//查找name=gender的所有节点, 自结束没有innerHTML, class需要用className
+			// var btn03 = document.getElementById('btn03');
+			// btn03.onclick = function(){
+			// 	var genderBtn = document.getElementsByName('gender');
+			// 	genderBtn.forEach(function(a){
+			// 		// alert(a.innerHTML);
+			// 		// alert(a.type);
+			// 		alert(a.className);
+			// 	})
+			// }
+
+			//查找#city下所有li节点（childNodes、fisrtChild、lastChild）
+			// var btn04 = document.getElementById('btn04');
+			// btn04.onclick = function(){
+			// 	alert('btn04');
+			// 	var cityUl = document.getElementById('city');
+			//     var cityLi = cityUl.getElementsByTagName('li');
+			// 	for (let i = 0; i < cityLi.length; i++) {
+			// 		alert(cityLi[i].innerHTML);
+			// 	}
+			// }
+
+
+			//返回#city的所有子节点
+			// var btn05 = document.getElementById('btn05');
+			// btn05.onclick = function(){
+			// 	var allChild = document.getElementById('city');
+			// 	// var childs = allChild.childNodes;
+			// 	//9: 5换行 + 4文本
+			// 	// alert(childs.length);
+
+			// 	// 4
+			// 	// var childs2 = allChild.children;
+			// 	// alert(childs2.length)
+
+			// 	// first、last
+			// 	var childsFirst = allChild.firstChild;
+			// 	alert(childsFirst.innerHTML)
+			// 	var childsLast = allChild.lastChild;
+			// 	alert(childsLast.innerHTML)
+			// }
+
+
+			//返回#phone的第一个子节点
+			// var btn06 = document.getElementById('btn06');
+			// btn06.onclick = function(){
+			// 	var pheBt = document.getElementById('phone');
+			// 	var firstIp = pheBt.firstChild
+			// 	alert(firstIp)
+			// }
+
+
+			//返回#bj的父节点
+			// var btn07 = document.getElementById('btn07');
+			// btn07.onclick = function(){
+			// 	var bjB = document.getElementById('bj');
+			// 	var par = bjB.parentNode;
+			// 	alert(par.id);
+			// }
+
+			//返回#android的前一个兄弟节点
+			// var btn08 = document.getElementById('btn08');
+			// btn08.onclick = function(){
+			// 	var bjB = document.getElementById('android');
+			// 	var par = bjB.previousSibling;
+			// 	alert(par.innerHTML);
+			// }
+
+			//读取#username的value属性值
+			// var btn09 = document.getElementById('btn09');
+			// btn09.onclick = function(){
+			// 	var bjB = document.getElementById('username');
+			// 	alert(bjB.value);
+			// }
+
+			//设置#username的value属性值
+			// var btn10 = document.getElementById('btn10');
+			// btn10.onclick = function(){
+			// 	var bjB = document.getElementById('username');
+			// 	bjB.value = 'im set value'
+			// 	alert(bjB.value)
+			// }
+
+			//返回#bj的文本值
+			// var btn11 = document.getElementById('btn11');
+			// btn11.onclick = function(){
+			// 	var bjB = document.getElementById('bj');
+			// 	alert(bjB.innerHTML)
+			// }
+
+			//练习：图片循环翻
+
+			// hobby 全选
+			//1.#checkedAllBtn
+			var checkedAllBtn = document.getElementById('checkedAllBtn');
+			checkedAllBtn.onclick = function () {
+				var btn1 = document.getElementsByName('items');
+				for (let i = 0; i < btn1.length; i++) {
+					btn1[i].checked = true;
+				}
+			};
+
+			//2.#checkedNoBtn
+			var checkedNoBtn = document.getElementById('checkedNoBtn');
+			checkedNoBtn.onclick = function () {
+				var btn2 = document.getElementsByName('items');
+				for (let i = 0; i < btn2.length; i++) {
+					btn2[i].checked = false;
+				}
+			};
+
+			//3.#checkedRevBtn
+			var checkedRevBtn = document.getElementById('checkedRevBtn');
+			checkedRevBtn.onclick = function () {
+				var btn3 = document.getElementsByName('items');
+				for (let i = 0; i < btn3.length; i++) {
+					if (btn3[i].checked == true) {
+						btn3[i].checked = false;
+					} else {
+						btn3[i].checked = true;
+					}
+
+				}
+			};
+
+			//4.#sendBtn
+			var sendBtn = document.getElementById('sendBtn');
+			sendBtn.onclick = function () {
+				var btn4 = document.getElementsByName('items');
+				for (let i = 0; i < btn4.length; i++) {
+					if (btn4[i].checked) {
+						alert(btn4[i].value)
+					}
+				}
+			}
+
+			//5.#checkedAllBox
+			var checkedAllBox = document.getElementById('checkedAllBox');
+			checkedAllBox.onclick = function () {
+				var btn5 = document.getElementsByName('items');
+				for (let i = 0; i < btn5.length; i++) {
+					if (checkedAllBox.checked) {
+						btn5[i].checked = true
+					} else {
+						btn5[i].checked = false
+					}
+				}
+			};
+
+			//6.items
+			var items = document.getElementsByName('items');
+			for (let i = 0; i < items.length; i++) {
+				items[i].onclick = function () {
+					checkedAllBox.checked = true;  //default ture, later judge
+					for (let j = 0; j < items.length; j++) {
+						if (!items[j].checked) {
+							checkedAllBox.checked = false;
+						}
+					}
+				}
+			}
+
+
+
+		}
+
+
+
+	</script>
+</head>
+
+<body>
+	<div id="total">
+		<div class="inner">
+			<p>
+				你喜欢哪个城市?
+			</p>
+
+			<ul id="city">
+				<li id="bj">北京</li>
+				<li>上海</li>
+				<li>东京</li>
+				<li>首尔</li>
+			</ul>
+
+			<br>
+			<br>
+
+			<p>
+				你喜欢哪款单机游戏?
+			</p>
+
+			<ul id="game">
+				<li id="rl">红警</li>
+				<li>实况</li>
+				<li>极品飞车</li>
+				<li>魔兽</li>
+			</ul>
+
+			<br />
+			<br />
+
+			<p>
+				你手机的操作系统是?
+			</p>
+
+			<ul id="phone">
+				<li>IOS</li>
+				<li id="android">Android</li>
+				<li>Windows Phone</li>
+			</ul>
+		</div>
+
+		<div class="inner">
+			gender:
+			<input class="cc1" type="radio" name="gender" value="male" />
+			Male
+			<input class="cc1" type="radio" name="gender" value="female" />
+			Female
+			<br>
+			<br>
+			name:
+			<input type="text" name="name" id="username" value="abcde" />
+		</div>
+	</div>
+	<div id="btnList">
+		<div><button id="btn01">查找#bj节点</button></div>
+		<div><button id="btn02">查找所有li节点</button></div>
+		<div><button id="btn03">查找name=gender的所有节点</button></div>
+		<div><button id="btn04">查找#city下所有li节点</button></div>
+		<div><button id="btn05">返回#city的所有子节点</button></div>
+		<div><button id="btn06">返回#phone的第一个子节点</button></div>
+		<div><button id="btn07">返回#bj的父节点</button></div>
+		<div><button id="btn08">返回#android的前一个兄弟节点</button></div>
+		<div><button id="btn09">返回#username的value属性值</button></div>
+		<div><button id="btn10">设置#username的value属性值</button></div>
+		<div><button id="btn11">返回#bj的文本值</button></div>
+	</div>
+
+
+	<br><br><br><br><br><br><br><br><br>
+	<hr>
+
+	<div style="float: left;padding: 100px;">
+		<form method="post" action="">
+			你爱好的运动是？<input type="checkbox" id="checkedAllBox" />全选/全不选
+
+			<br />
+			<input type="checkbox" name="items" value="足球" />足球
+			<input type="checkbox" name="items" value="篮球" />篮球
+			<input type="checkbox" name="items" value="羽毛球" />羽毛球
+			<input type="checkbox" name="items" value="乒乓球" />乒乓球
+			<br />
+			<input type="button" id="checkedAllBtn" value="全　选" />
+			<input type="button" id="checkedNoBtn" value="全不选" />
+			<input type="button" id="checkedRevBtn" value="反　选" />
+			<input type="button" id="sendBtn" value="提　交" />
+		</form>
+	</div>
+
+
+</body>
+
+</html>
