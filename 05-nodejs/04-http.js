@@ -1,36 +1,24 @@
 
 /**
- * Buffer
+ * http module
  */
 
-// console.log("hello nodejs");
-// let buf = Buffer.alloc(10);
-// console.log(buf);
+// url（uniform resource locator）： request line、header、blank、body
 
 
 
-/**
- * file
- */
-// 1. normal
-const { on } = require('events');
-const fs = require('fs');
-// fs.writeFile('tmp_file/aa.txt','hello, im first file', err =>{
-//     if(err){
-//         console.log("write file fail");
-//         return;
-//     }
-//     console.log('write file success');
-// })
 
-// 2.sync, async
-// fs.writeFileSync('tmp_file/aaSync.txt','hello, im first file', err =>{
-//     if(err){
-//         console.log("write file fail");
-//         return;
-//     }
-//     console.log('write file success');
-// })
+// http: url（uniform resource locator）： request line、header、blank、body
+// 1. server
+const http = require('http');
+const server = http.createServer((request,response) => {
+    response.setHeader('Content-Type','text/html; charset=utf-8');
+    response.end('hello http server, 你好')
+});
+server.listen(9000, () =>{
+    console.log('server started')
+})
+
 
 // 3.append
 // fs.appendFile('tmp_file/aa.txt','hello, im append content', err =>{
@@ -108,10 +96,3 @@ const fs = require('fs');
 // })
 
 // 10. resource status
-fs.stat('tmp_file/aa.txt' ,(err, data) => {
-    if(err){
-        console.log("status fail")
-        return
-    }
-    console.log(data)
-})
