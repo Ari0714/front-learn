@@ -1,0 +1,286 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Untitled Document</title>
+	<link rel="stylesheet" type="text/css" href="style/css.css" />
+	<link rel="stylesheet" type="text/css" href="style/css2.css" />
+	<script type="text/javascript">
+
+		// extract func
+		function delA() {
+			// alert('confirm delete?')
+			var name2 = this.parentNode.parentNode;
+			var username = name2.children[0].innerHTML
+			var cf = confirm('confirm delete: ' + username + '?');
+			if (cf) {
+				var pr = this.parentNode.parentNode;
+				pr.parentNode.removeChild(pr);
+			}
+			return false;
+		}
+
+
+		window.onload = function () {
+
+			/**
+			 * curd
+			 */
+			//创建一个"广州"节点,添加到#city下
+			var btn01 = document.getElementById('btn01');
+			btn01.onclick = function () {
+				var li = document.createElement('li');
+				var gz = document.createTextNode('广州');
+				li.append(gz);
+
+				var city = document.getElementById('city');
+				city.appendChild(li);
+
+			}
+
+
+			//将"广州"节点插入到#bj前面
+			var btn02 = document.getElementById('btn02')
+			btn02.onclick = function () {
+				var li = document.createElement('li');
+				var gz = document.createTextNode('广州');
+				li.append(gz);
+
+				var bj = document.getElementById('bj')
+				var city = document.getElementById('city')
+
+				city.insertBefore(li, bj);
+			}
+
+			//使用"广州"节点替换#bj节点
+			var btn03 = document.getElementById('btn03')
+			btn03.onclick = function () {
+				var li = document.createElement('li');
+				var gz = document.createTextNode('广州');
+				li.append(gz);
+
+				var bj = document.getElementById('bj')
+				var city = document.getElementById('city')
+
+				city.replaceChild(li, bj);
+			}
+
+
+			//删除#bj节点（remove： removeAll）
+			var btn04 = document.getElementById('btn04')
+			btn04.onclick = function () {
+				var bj = document.getElementById('bj')
+				var city = document.getElementById('city')
+
+				city.removeChild(bj);
+			}
+
+			//读取#city内的HTML代码
+			var btn05 = document.getElementById('btn05')
+			btn05.onclick = function () {
+				var city = document.getElementById('city')
+				alert(city.innerHTML);
+			}
+
+
+			//设置#bj内的HTML代码
+			var btn06 = document.getElementById('btn06')
+			btn06.onclick = function () {
+				var city = document.getElementById('city')
+				city.innerHTML = '<li>add element</li>'
+			}
+
+
+			//创建一个"广州"节点,添加到#city下
+			var btn07 = document.getElementById('btn07')
+			btn07.onclick = function () {
+				var city = document.getElementById('city')
+				city.innerHTML += '<li>广州</li>'
+			}
+
+			/**
+			 * test2
+			 */
+			// delete button
+			var aLink = document.getElementsByTagName('a');
+			for (let i = 0; i < aLink.length; i++) {
+				aLink[i].onclick = delA
+			}
+
+			// add button
+			var addEmpButton = document.getElementById('addEmpButton');
+			// method1
+			// addEmpButton.onclick = function () {
+			// 	// alert('aaa');
+
+			// 	// get data
+			// 	var name = document.getElementById('empName').value
+			// 	var email = document.getElementById('email').value
+			// 	var salary = document.getElementById('salary').value
+
+			// 	// create Text node
+			// 	var nameText = document.createTextNode(name)
+			// 	var emailText = document.createTextNode(email)
+			// 	var salaryText = document.createTextNode(salary)
+			// 	var detelText = document.createTextNode('Delete')
+
+			// 	var tr = document.createElement('tr')
+			// 	var td1 = document.createElement('td')
+			// 	var td2 = document.createElement('td')
+			// 	var td3 = document.createElement('td')
+			// 	var td4 = document.createElement('td')
+			// 	var a = document.createElement('a')
+			// 	a.href = 'javascript:;'
+			// 	a.onclick = delA;
+
+			// 	a.appendChild(detelText);
+
+			// 	td1.appendChild(nameText)
+			// 	td2.appendChild(emailText)
+			// 	td3.appendChild(salaryText)
+			// 	td4.appendChild(a)
+
+			// 	tr.appendChild(td1)
+			// 	tr.appendChild(td2)
+			// 	tr.appendChild(td3)
+			// 	tr.appendChild(td4)
+
+			// 	//add to table
+			// 	var tab = document.getElementById('employeeTable');
+			// 	tab.appendChild(tr);
+			// }
+
+			// method2
+			addEmpButton.onclick = function () {
+				// // alert('aaa');
+
+				var name = document.getElementById("empName").value;
+				var email = document.getElementById("email").value;
+				var salary = document.getElementById("salary").value;
+
+				var tr = document.createElement("tr");
+
+				//设置tr中的内容
+				tr.innerHTML = "<td>" + name + "</td>" +
+					"<td>" + email + "</td>" +
+					"<td>" + salary + "</td>" +
+					"<td><a href='javascript:;'>Delete</a></td>";
+
+				//获取刚刚添加的a元素，并为其绑定单击响应函数				
+				var a = tr.getElementsByTagName("a")[0];
+				a.onclick = delA;
+
+				//获取table
+				var employeeTable = document.getElementById("employeeTable");
+				//获取employeeTable中的tbody
+				var tbody = employeeTable.getElementsByTagName("tbody")[0];
+				//将tr添加到tbodye中
+				tbody.appendChild(tr);
+			}
+
+
+		}
+
+
+
+	</script>
+</head>
+
+<body>
+
+	<div id="total">
+		<div class="inner">
+			<p>
+				你喜欢哪个城市?
+			</p>
+
+			<ul id="city">
+				<li id="bj">北京</li>
+				<li>上海</li>
+				<li>东京</li>
+				<li>首尔</li>
+			</ul>
+
+		</div>
+	</div>
+	<div id="btnList">
+		<div><button id="btn01">创建一个"广州"节点,添加到#city下</button></div>
+		<div><button id="btn02">将"广州"节点插入到#bj前面</button></div>
+		<div><button id="btn03">使用"广州"节点替换#bj节点</button></div>
+		<div><button id="btn04">删除#bj节点</button></div>
+		<div><button id="btn05">读取#city内的HTML代码</button></div>
+		<div><button id="btn06">设置#bj内的HTML代码</button></div>
+		<div><button id="btn07">创建一个"广州"节点,添加到#city下</button></div>
+	</div>
+
+
+	<!-- test2 -->
+	<br><br><br><br><br>
+
+	<table id="employeeTable">
+		<tr>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Salary</th>
+			<th>&nbsp;</th>
+		</tr>
+		<tr>
+			<td>Tom</td>
+			<td>tom@tom.com</td>
+			<td>5000</td>
+			<td><a href="javascript:;">Delete</a></td>
+		</tr>
+		<tr>
+			<td>Jerry</td>
+			<td>jerry@sohu.com</td>
+			<td>8000</td>
+			<td><a href="deleteEmp?id=002">Delete</a></td>
+		</tr>
+		<tr>
+			<td>Bob</td>
+			<td>bob@tom.com</td>
+			<td>10000</td>
+			<td><a href="deleteEmp?id=003">Delete</a></td>
+		</tr>
+	</table>
+
+	<div id="formDiv">
+
+		<h4>添加新员工</h4>
+
+		<table>
+			<tr>
+				<td class="word">name: </td>
+				<td class="inp">
+					<input type="text" name="empName" id="empName" />
+				</td>
+			</tr>
+			<tr>
+				<td class="word">email: </td>
+				<td class="inp">
+					<input type="text" name="email" id="email" />
+				</td>
+			</tr>
+			<tr>
+				<td class="word">salary: </td>
+				<td class="inp">
+					<input type="text" name="salary" id="salary" />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<button id="addEmpButton" value="abc">
+						Submit
+					</button>
+				</td>
+			</tr>
+		</table>
+
+	</div>
+
+
+
+</body>
+
+</html>

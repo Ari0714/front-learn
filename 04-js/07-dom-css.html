@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Untitled Document</title>
+
+	<style>
+		#div1{
+			width: 200px;
+			height: 200px;
+			background-color: green;
+		}
+	</style>
+	
+
+	<script type="text/javascript">
+
+		window.onload = function () {
+
+			/**
+			 * js operate css
+			 */
+			var bx01 = document.getElementById('div1')
+			var btn01 = document.getElementById('btn01')
+			btn01.onclick = function(){
+				bx01.style.backgroundColor = 'red'
+			}
+
+			var btn02 = document.getElementById('btn02')
+			btn02.onclick = function(){
+				//js set\read is inner style
+				bx01.style.width = '400px'
+				alert(bx01.style.width)
+			}
+
+		}
+
+	</script>
+</head>
+
+<body>
+
+
+	<div id="div1"></div>
+
+	<button id="btn01">btn01</button>
+	<button id="btn02">btn02</button>
+
+
+</body>
+
+</html>
