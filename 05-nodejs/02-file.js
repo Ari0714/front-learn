@@ -13,7 +13,6 @@
  * file
  */
 // 1. normal
-const { on } = require('events');
 const fs = require('fs');
 // fs.writeFile('tmp_file/aa.txt','hello, im first file', err =>{
 //     if(err){

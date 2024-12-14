@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Untitled Document</title>
+
+	<style>
+		#box1 {
+			width: 200px;
+			height: 200px;
+			background-color: yellowgreen;
+		}
+
+		#s1 {
+			background-color: yellow;
+		}
+	</style>
+
+
+	<script type="text/javascript">
+
+		window.onload = function () {
+
+			/**
+			 * event bubble: event convery to parent element
+			 */
+			//
+			var s1 = document.getElementById('s1')
+			s1.onclick = function(event){
+				event = event || window.event;
+				alert("我是span的单击响应函数");
+
+				//cancel: parent calcel all
+				event.cancelBubble = true;
+			}
+
+			var box1 = document.getElementById('box1')
+			box1.onclick = function(event){
+				event = event || window.event;
+				alert("我是div的单击响应函数");
+			}
+
+			document.body.onclick = function(){
+				alert("我是body的单击响应函数");
+			}
+
+		}
+
+	</script>
+</head>
+
+<body style="height: 1000px;width: 2000px;">
+
+	<div id="box1">
+		我是box1
+		<span id="s1">我是span</span>
+	</div>
+
+</body>
+
+</html>

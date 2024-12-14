@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Untitled Document</title>
+
+	<style>
+		#areaDiv {
+			border: 1px solid black;
+			width: 300px;
+			height: 50px;
+			margin-bottom: 10px;
+		}
+		#showMsg {
+			border: 1px solid black;
+			width: 300px;
+			height: 20px;
+		}
+
+		#box1{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				/*
+				 * 开启box1的绝对定位
+				 */
+				position: absolute;
+			}
+	</style>
+
+
+	<script type="text/javascript">
+
+		window.onload = function () {
+
+			/**
+			 * event object
+			 */
+			// mouse move show position
+			var areaDiv = document.getElementById('areaDiv')
+			var showMsg = document.getElementById('showMsg')
+			areaDiv.onmousemove = function (event) {
+
+				// solve event compatible 
+				event = event || window.enent;
+				var x = event.clientX;
+				var y = event.clientY;
+
+				showMsg.innerHTML = "("+x+","+y+")"
+			}
+
+
+			//exercise: div move follow by mouse
+			var box1 = document.getElementById('box1')
+			document.onmousemove = function(event){
+
+				event = event || window.event
+ 
+				// get scroll-bar scroll distance
+				var st = document.body.scrollTop || document.documentElement.scrollTop;
+				var sl = document.body.scrollLeft || document.documentElement.scrollLeft;
+
+				// get mouse position
+				var left = event.clientX;
+				var top = event.clientY;
+				
+				// set div offset
+				box1.style.left = left + sl + "px";
+				box1.style.top = top + st + "px";
+
+			}
+
+		}
+
+	</script>
+</head>
+
+<body style="height: 1000px;width: 2000px;"> 
+
+
+	<div id="areaDiv"></div>
+	<div id="showMsg"></div>
+
+	<div id="box1"></div>
+
+</body>
+
+</html>

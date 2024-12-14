@@ -1,190 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
 
-    <!-- <script type="text/javascript" src="js/script.js"></script> -->
-    <script type="text/javascript">
-       
-       
-       /**
-        * data：string、number、boolean、null、undefined(above are base datatype)、object
-        */
-        // number
-       var a1 = 1;
-       var a2 = "1";
-       var a3 = Number.MAX_VALUE;
-       var a4 = Number.MIN_VALUE;
-    //    alert(a1)
-    //    alert(typeof a1)
-    //    alert(typeof a2)
-    //    alert(a3)
-       
-     // string
-       var b1 = "today weather is 'good'";
-       var b2 = "today weather is \"good\"";
-    //    alert(b2)
+   <!-- <script type="text/javascript" src="js/script.js"></script> -->
+   <script type="text/javascript">
 
-    // boolean
-       var c1 = true
-       var c2 = false
-    //    alert(c2)
 
-     // null、undefined、object
-       var d1;
-       var d2 = null;
-    //    var d3 = Object
-    //    alert(d1)
-    //    alert(d2)
-    //    alert(typeof d2)
+      /**
+       * data：string、number、boolean、null、undefined(above are base datatype)、object
+       */
+      // number
+      var a1 = 1;
+      var a2 = "1";
+      var a3 = Number.MAX_VALUE;
+      var a4 = Number.MIN_VALUE;
+      //    alert(a1)
+      //    alert(typeof a1)
+      //    alert(typeof a2)
+      //    alert(a3)
 
-     // data convert（string、number、boolean）
-     // -》 string
-       var e1 = 1;
-       var e2 = e1.toString()
-       var e22 = String(e1)
-    //    alert(typeof e2)
+      // string
+      var b1 = "today weather is 'good'";
+      var b2 = "today weather is \"good\"";
+      //    alert(b2)
 
-     // -》 number, 12ac typeof-》number，print value-》NaN, ' ' =》 0， 
-     //   false0 true1，null -》0， undefined -》NaN
-       var f1 = "1";
-       var f2 = Number(f1)
-       var f3 = "12ac";
-       var f4 = Number(f3);
-       var f5 = Number("   ");
-       var f6 = Number(false);
-    //    alert(typeof f2);
-    //    alert(typeof f4);
-    //    alert(f4);
-    //    alert(f5);
-    //    alert(f6);
+      // boolean
+      var c1 = true
+      var c2 = false
+      //    alert(c2)
 
-       //parseInt, parseFloat, only extract number, substr when encount alpha
-       var f7 = "12.01ac15";
-    //    alert(parseInt(f7))
-       var f8 = "12.01ac14";
-    //    alert(parseFloat(f8))
+      // null、undefined、object
+      var d1;
+      var d2 = null;
+      //    var d3 = Object
+      //    alert(d1)
+      //    alert(d2)
+      //    alert(typeof d2)
 
-    // -》 boolean，beside 0、NaN all true
-        var f9 = "0";
-        var f10 = 0;
-        // alert(Boolean(f9));
-        // alert(Boolean(f10));
+      // data convert（string、number、boolean）
+      // -》 string
+      var e1 = 1;
+      var e2 = e1.toString()
+      var e22 = String(e1)
+      //    alert(typeof e2)
 
-        
-       /**
-        * calculate symbol： + - * / %(取余4%3=1)
-        */
-       var f11 = 4 / 3;
-    //    alert(f11) 
-       var f11 = 4 % 3;
-    //    alert(f11) 
+      // -》 number, 12ac typeof-》number，print value-》NaN, ' ' =》 0， 
+      //   false0 true1，null -》0， undefined -》NaN
+      var f1 = "1";
+      var f2 = Number(f1)
+      var f3 = "12ac";
+      var f4 = Number(f3);
+      var f5 = Number("   ");
+      var f6 = Number(false);
+      //    alert(typeof f2);
+      //    alert(typeof f4);
+      //    alert(f4);
+      //    alert(f5);
+      //    alert(f6);
+
+      //parseInt, parseFloat, only extract number, substr when encount alpha
+      var f7 = "12.01ac15";
+      //    alert(parseInt(f7))
+      var f8 = "12.01ac14";
+      //    alert(parseFloat(f8))
+
+      // -》 boolean，beside 0、NaN all true
+      var f9 = "0";
+      var f10 = 0;
+      // alert(Boolean(f9));
+      // alert(Boolean(f10));
+
+
+      /**
+       * calculate symbol： + - * / %(取余4%3=1)
+       */
+      var f11 = 4 / 3;
+      //    alert(f11) 
+      var f11 = 4 % 3;
+      //    alert(f11) 
 
       /**
         * logic calculate：！、&&、 ||
         *  non boolean calculate: &&0 -> 0, &&!0 return later, two all false return before
         */
       var f12 = 1 != 2;
-    //    alert(f12) 
-       var f13 = true && false;
-    //    alert(f13);
-       var f14 = 12 && 0;
-    //    alert(f14);
-       var f15 = 12 && 15;
-    //    alert(f15);
+      //    alert(f12) 
+      var f13 = true && false;
+      //    alert(f13);
+      var f14 = 12 && 0;
+      //    alert(f14);
+      var f15 = 12 && 15;
+      //    alert(f15);
 
-    /**
-        * give value calculate：
-        */
+      /**
+          * give value calculate：
+          */
       var f16 = 1;
-    //    alert(f16) 
-       var f17 = f16 + 1;
-       f17 += 1;
-    //    alert(f17); 
-       
-     /**
-        * relation calculate（big small）：
-        */
+      //    alert(f16) 
+      var f17 = f16 + 1;
+      f17 += 1;
+      //    alert(f17); 
+
+      /**
+         * relation calculate（big small）：
+         */
       var f18 = 1 > 0;
-    //    alert(f18) 
-       var f19 = -1 > -2;
-    //    alert(f19); 
+      //    alert(f18) 
+      var f19 = -1 > -2;
+      //    alert(f19); 
 
-     /**
-        * equal calculate：==  =》 value is equal, === =》 all equal
-        */
+      /**
+         * equal calculate：==  =》 value is equal, === =》 all equal
+         */
       var f20 = (1 != 1);
-    //    alert(f20) 
+      //    alert(f20) 
       var f21 = ("1" === 1);
-    //    alert(f21)
-      var f22=1, f23=2, f24=3;
-    //   alert(f23)
+      //    alert(f21)
+      var f22 = 1, f23 = 2, f24 = 3;
+      //   alert(f23)
 
 
-    /**
-        * condition calculate：1 == 1 ? 2 : 3;  x>0?x:-1
-        */
+      /**
+          * condition calculate：1 == 1 ? 2 : 3;  x>0?x:-1
+          */
       var f25 = (1 != 1 ? 2 : 3);
-    //    alert(f25) 
+      //    alert(f25) 
 
-   /**
-        * process control： if
-        */
-       var f26 = 4;
-    //    if(f26 > 2){
-    //     alert("if1");
-    //    }else if(f26 > 3){
-    //     alert("if2");
-    //    }else{
-    //     alert("if3");
-    //    }
-    //    switch(f26){
-    //     case 1: alert("switch 1");
-    //     case 2: alert("switch 2");
-    //     case 3: alert("switch 3");
-    //     case 4: alert("switch 4");
-    //    }
+      /**
+           * process control： if
+           */
+      var f26 = 4;
+      //    if(f26 > 2){
+      //     alert("if1");
+      //    }else if(f26 > 3){
+      //     alert("if2");
+      //    }else{
+      //     alert("if3");
+      //    }
+      //    switch(f26){
+      //     case 1: alert("switch 1");
+      //     case 2: alert("switch 2");
+      //     case 3: alert("switch 3");
+      //     case 4: alert("switch 4");
+      //    }
 
-        /**
-        * process control： while、do while
-        */
-        var f27 = 1;
-        // while(f27 < 5){
-        //     alert(f27);
-        //     f27++;
-        // }
+      /**
+      * process control： while、do while
+      */
+      var f27 = 1;
+      // while(f27 < 5){
+      //     alert(f27);
+      //     f27++;
+      // }
 
-        // do {
-        //     alert(f27);
-        //     f27++;
-        // } while(f27 < 5)
-        
-        for(i=0;i<5;i++){
-            if(i == 1){
-                continue;
-            }
-            if(i == 3){
-                break;
-            }
-            alert(i);
-        }
+      // do {
+      //     alert(f27);
+      //     f27++;
+      // } while(f27 < 5)
+
+      //   for(i=0;i<5;i++){
+      //       if(i == 1){
+      //           continue;
+      //       }
+      //       if(i == 3){
+      //           break;
+      //       }
+      //       alert(i);
+      //   }
+
+      /**
+       * json: 
+       * parse: string -> json. IE7及以下的浏览器中不支持
+       * stringify: json -> string
+       * eval: 
+       */
+      var js3 = '{"name":"孙悟空","age":18,"gender":"男"}';
+      var o2 = JSON.parse(js3);
+      //  alert(o2.name);
+
+      var js4 = JSON.stringify(o2);
+      //  alert(js4)
+
+      /*
+     * eval(): evaluate
+     * 	- 这个函数可以用来执行一段字符串形式的JS代码，并将执行结果返回
+     * 	- 如果使用eval()执行的字符串中含有{},它会将{}当成是代码块
+     * 		如果不希望将其当成代码块解析，则需要在字符串前后各加一个()
+     * 
+     * 	- eval()这个函数的功能很强大，可以直接执行一个字符串中的js代码，
+     * 		但是在开发中尽量不要使用，首先它的执行性能比较差，然后它还具有安全隐患
+     */
+      var str2 = "alert('hello');";
+      var obj = eval("(" + js3 + ")");
+      alert(obj);
 
 
-    </script>
+   </script>
 
 </head>
 
 <body>
 
-  
 
-    <!-- <button onclick="alert('im button alert')">click me</button>
+
+   <!-- <button onclick="alert('im button alert')">click me</button>
 
     <a href="javascript:alert('im link alert')">click me again</a>
 
     <a href="javascript:;">click me again no end</a> -->
 
 </body>
+
 </html>

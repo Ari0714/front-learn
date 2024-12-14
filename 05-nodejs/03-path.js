@@ -1,11 +1,5 @@
-
 /**
  * path
- */
-
-
-/**
- * file
  */
 // 1. basic
 const path = require('path');

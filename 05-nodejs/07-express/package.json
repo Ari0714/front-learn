@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-generator": "^4.16.1",
+    "formidable": "^3.5.2",
+    "uniq": "^1.0.1"
+  }
+}
