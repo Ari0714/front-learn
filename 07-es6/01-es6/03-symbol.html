@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background: #58a;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- symbol -->
+    <script>
+        let s = Symbol();
+        console.log(s, typeof s)
+
+        let s2 = Symbol('123')
+        let s3 = Symbol('456')
+        let s4 = Symbol.for('尚硅谷');
+        let s5 = Symbol.for('尚硅谷');
+
+        //cant calculate with other type
+        // let res = s2 + 123;
+
+        // USONB  you are so niubility
+        // u  undefined
+        // s  string  symbol
+        // o  object
+        // n  null number
+        // b  boolean
+    </script>
+
+
+    <!-- Symbol 创建对象属性 -->
+    <script>
+
+        let game = {
+            name: '俄罗斯方块',
+            up: function () { },
+            down: function () { }
+        }
+
+        //declare obj
+        let methods = {
+            up: Symbol(),
+            down: Symbol()
+        }
+        game[methods.up] = function () {
+            console.log('我可以改变形状')
+        }
+        game[methods.down] = function () {
+            console.log('我可以快速下!!')
+        }
+        console.log(game);
+
+        //
+        let youxi = {
+            name: "狼人杀",
+            [Symbol('say')]: function () {
+                console.log("我可以发言")
+            },
+            [Symbol('zibao')]: function () {
+                console.log('我可以自爆');
+            }
+        }
+        console.log(youxi)
+
+    </script>
+
+    <!-- Symbol内置属性 -->
+    <script>
+        class Person {
+            static [Symbol.hasInstance](param) {
+                console.log(param);
+                console.log("我被用来检测类型了");
+                return false;
+            }
+        }
+
+        let o = {};
+        console.log(o instanceof Person);
+
+        const arr = [1, 2, 3];
+        const arr2 = [4, 5, 6];
+        arr2[Symbol.isConcatSpreadable] = false;
+        console.log(arr.concat(arr2));
+    </script>
+
+</body>
+
+</html>

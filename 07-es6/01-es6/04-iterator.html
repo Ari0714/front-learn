@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background: #58a;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- 遍历器（Iterator） -->
+    <script>
+        const xiyou = ['唐僧', '孙悟空', '猪八戒', '沙僧'];
+
+        // for(let v of xiyou){
+        //     console.log(v)
+        // }
+
+        //iterator
+        let it = xiyou[Symbol.iterator]()
+        console.log(it.next())  //{value: '唐僧', done: false}
+        console.log(it.next())
+        console.log(it.next())
+    </script>
+
+
+    <!-- self-define Iterator -->
+    <script>
+        //声明一个对象
+        const banji = {
+            name: "终极一班",
+            stus: [
+                'xiaoming',
+                'xiaoning',
+                'xiaotian',
+                'knight'
+            ],
+            [Symbol.iterator]() {
+                //索引变量
+                let index = 0;
+                //
+                let _this = this;
+                return {
+                    next: function () {
+                        if (index < _this.stus.length) {
+                            const result = { value: _this.stus[index], done: false };
+                            //下标自增
+                            index++;
+                            //返回结果
+                            return result;
+                        } else {
+                            return { value: undefined, done: true };
+                        }
+                    }
+                };
+            }
+        }
+
+        //遍历这个对象 
+        for (let v of banji) {
+            console.log(v);
+        }
+    </script>
+
+</body>
+
+</html>

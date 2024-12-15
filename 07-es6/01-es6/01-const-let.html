@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .item {
+            width: 100px;
+            height: 50px;
+            border: solid 1px rgb(42, 156, 156);
+            float: left;
+            margin-right: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <script>
+        let a = 123;
+        let ad = 'abc';
+        let li = [1, 2, 3, 4];
+        let a1, b1, c1;
+        let a2 = 200, a3 = 200;
+
+        //effect area
+        {
+            let a4 = 200, a5 = 500
+        }
+        // console.log(a4)
+
+        //no variable improve
+        // console.log(song);
+        // let song = '恋爱达人';
+
+        //dont affect effect area chain
+        {
+            let school = 'sgu'
+            function fn() {
+                console.log(school)
+            }
+            fn();
+        }
+    </script>
+
+    <!-- case1 -->
+    <div class="container">
+        <h2 class="page-header">点击切换颜色</h2>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <script>
+        let item = document.getElementsByClassName('item')
+        for (let i = 0; i < item.length; i++) {
+            item[i].onclick = function () {
+                item[i].style.background = 'pink'
+            }
+        }
+    </script>
+
+
+    <!-- const -->
+    <script>
+        // const value, dont modify
+        // const AA;
+        const SCHOOL = 'sgu'
+        const LI = [1, 2, 3, 4]
+
+        //block effect
+        {
+            const A2 = 123
+        }
+        // console.log(A2)
+
+    </script>
+
+    <!-- 解构赋值 -->
+    <script>
+        const F4 = [1, 2, 3, 4]
+        let [a6, b6, c6, d6] = F4
+        console.log(a6)
+
+        //object => use{}
+        const ZHAO = {
+            name: 'Ari',
+            age: 12,
+            fnn: function () { console.log('abc') }
+        }
+        let { a7, b7, c7 } = ZHAO
+        console.log(c7)
+    </script>
+
+    <!-- 引入新的声明字符串的方式 -->
+    <script>
+        //change line
+        let str = `<ul>
+                    <li>aaa</li>
+                    <li>bbb</li>
+                    <li>ccc</li>
+                    <li>ddd</li>
+                    </ul>`
+
+        //concat
+        let name2 = 'Ari'
+        let out = `${name2} is best`
+        console.log(out)
+    </script>
+
+    <!-- object simple write-method 
+     许在大括号里面，直接写入变量和函数，作为对象的属性和方法
+     -->
+    <script>
+        let name3 = 'name3'
+        let func = function(){
+            console.log('i am a func')
+        }
+
+        const school2 = {
+            name3,
+            func,
+            improve(){
+                console.log('func simple wtire')
+            }
+        }
+        console.log(school2)
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>

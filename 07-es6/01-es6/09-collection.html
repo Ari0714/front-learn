@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="text/javascript" src="js/script.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background: #58a;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- set -->
+    <script>
+        const s1 = new Set([1, 2, 3, 3])
+        // console.log(s1)
+        // for (let v of s1) {
+        //     console.log(v)
+        // }
+
+        //use
+        let arr = [1, 2, 3, 4, 5, 4, 3, 2, 1];
+        //1. 数组去重
+        let res = [...new Set(arr)]
+        // console.log(res)
+
+        //2. 交集
+        let arr2 = [4, 5, 6, 5, 6];
+        let res2 = [...new Set(arr)].filter(x => {
+            let s2 = new Set(arr2);
+            if (s2.has(x)) {
+                return true
+            } else {
+                return false
+            }
+        })
+        let res22 = [...new Set(arr)].filter(x => new Set(arr2).has(x))
+        // console.log(res22)
+
+        //3. 并集
+        let union = [...new Set([...arr, ...arr2])]
+        // console.log(union)
+
+        //4. 差集
+        let diff = [...new Set(arr)].filter(x => !new Set(arr2).has(x))
+        // console.log(diff)
+
+    </script>
+
+
+    <!-- map -->
+    <script>
+        //添加元素
+        let m = new Map();
+        m.set('a', 123)
+        m.set('change', function () { console.log('map: change') })
+
+        let key = {
+            school: 'ATGUIGU'
+        }
+        m.set(key, ['北京', '上海', '深圳']);
+
+        //show
+        console.log(m);
+
+        //size
+        // console.log(m.size);
+
+        //删除
+        // m.delete('name');
+
+        //获取
+        console.log(m.get('change'));
+        console.log(m.get(key));
+
+        //清空
+        // m.clear();
+
+        //遍历
+        // for (let v of m) {
+        //     console.log(v);
+        // }
+
+    </script>
+
+</body>
+
+</html>
