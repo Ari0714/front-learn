@@ -1,0 +1,316 @@
+
+const mongoose = require('mongoose')
+
+//设置 strictQuery 为 true
+mongoose.set('strictQuery', true);
+
+//3. 连接 mongodb 服务   数据库的名称
+mongoose.connect('mongodb://hdp:27017/bilibili');
+
+//4. 设置回调
+// 设置连接成功的回调  once 一次   事件回调函数只执行一次
+// mongoose.connection.once('open', () => {
+//     console.log('连接成功');
+//     // app.listen(8080);
+// });
+
+// 设置连接错误的回调
+mongoose.connection.on('error', () => {
+    console.log('连接失败');
+});
+
+//设置连接关闭的回调
+mongoose.connection.on('close', () => {
+    console.log('连接关闭');
+});
+
+//关闭 mongodb 的连接
+// setTimeout(() => {
+//     mongoose.disconnect();
+// }, 2000)
+
+
+/**
+ * insert
+ */
+// mongoose.connection.once('open', () => {
+//     //5. 创建文档的结构对象
+//     //设置集合中文档的属性以及属性值的类型
+//     let BookSchema = new mongoose.Schema({
+//         name: {
+//             type: String,
+//             required: true, // 表明该属性必须不为空
+//             unique: true,// 设置为独一无二的
+//             default: '匿名',
+//             // enum: ['言情', '城市', '志怪', '恐怖']  //枚举
+//         },
+//         author: String,
+//         price: Number,
+//         is_hot: Boolean,
+//         tags: Array,
+//         pub_time: Date,
+//         test: mongoose.Schema.Types.Mixed // 文档 ID
+//     });
+
+//     //6. 创建模型对象  对文档操作的封装对象
+//     let BookModel = mongoose.model('books', BookSchema);
+
+//     //7. 新增
+//     BookModel.create({
+//         name: '西游记2',
+//         author: '吴承恩',
+//         price: 19.9,
+//         is_hot: true,
+//         tags: ['鬼怪', '励志', '社会'],
+//         pub_time: new Date(),
+//         test: new Date()
+//     }, (err, data) => {
+//         //判断是否有错误
+//         if (err) {
+//             console.log(err);
+//             return;
+//         }
+//         //如果没有出错, 则输出插入后的文档对象
+//         console.log(data);
+//         //8. 关闭数据库连接 (项目运行过程中, 不会添加该代码)
+//         mongoose.disconnect();
+//     });
+
+// });
+
+
+/**
+ * delete
+ */
+// mongoose.connection.once('open', () => {
+//     //5. 创建文档的结构对象
+//     //设置集合中文档的属性以及属性值的类型
+//     let BookSchema = new mongoose.Schema({
+//         name: String,
+//         author: String,
+//         price: Number,
+//         is_hot: Boolean
+//     });
+
+//     //6. 创建模型对象  对文档操作的封装对象    mongoose 会使用集合名称的复数, 创建集合
+//     let BookModel = mongoose.model('books', BookSchema);
+
+//     //7. 删除一条
+//     // BookModel.deleteOne({_id: '63f34af50cf203761ede1892'}, (err, data) => {
+//     //   //判断
+//     //   if(err){
+//     //     console.log('删除失败~~~');
+//     //     return;
+//     //   }
+//     //   //输出 data
+//     //   console.log(data);
+//     // });
+
+//     //批量删除
+//     BookModel.deleteMany({ is_hot: true }, (err, data) => {
+//         //判断
+//         if (err) {
+//             console.log('删除失败~~~');
+//             return;
+//         }
+//         //输出 data
+//         console.log(data);
+//     });
+// });
+
+/**
+ * update
+ */
+// mongoose.connection.once('open', () => {
+//     //5. 创建文档的结构对象
+//     //设置集合中文档的属性以及属性值的类型
+//     let BookSchema = new mongoose.Schema({
+//       name: String,
+//       author: String,
+//       price: Number,
+//       is_hot: Boolean
+//     });
+
+//     //6. 创建模型对象  对文档操作的封装对象    mongoose 会使用集合名称的复数, 创建集合
+//     let BookModel = mongoose.model('books', BookSchema);
+
+//     //7. 更新文档 更新一条
+//     // BookModel.updateOne({name: '红楼梦'}, {price: 9.9}, (err, data) => {
+//     //   //判断 err 
+//     //   if(err){
+//     //     console.log('更新失败~~');
+//     //     return;
+//     //   }
+//     //   //输出 data
+//     //   console.log(data);
+//     // });
+
+//     //批量更新(condition, updata-value)
+//     BookModel.updateMany({name: '西游记'}, {price: 29.9}, (err, data) => {
+//       //判断 err 
+//       if(err){
+//         console.log('更新失败~~');
+//         return;
+//       }
+//       //输出 data
+//       console.log(data);
+//     });
+
+//   });
+
+
+/**
+ * select
+ */
+// mongoose.connection.once('open', () => {
+//     //5. 创建文档的结构对象
+//     //设置集合中文档的属性以及属性值的类型
+//     let BookSchema = new mongoose.Schema({
+//         name: String,
+//         author: String,
+//         price: Number,
+//         is_hot: Boolean
+//     });
+
+//     //6. 创建模型对象  对文档操作的封装对象    mongoose 会使用集合名称的复数, 创建集合
+//     let BookModel = mongoose.model('books', BookSchema);
+
+//     //读取所有
+//     BookModel.find((err, data) => {
+//         if (err) {
+//             console.log('读取失败~~~');
+//             return;
+//         }
+//         //输出 data 变量的值
+//         console.log(data);
+//     })
+
+//     //批量获取
+//     // BookModel.find({ author: '余华' }, (err, data) => {
+//     //   if (err) {
+//     //     console.log('读取失败~~~');
+//     //     return;
+//     //   }
+//     //   //输出 data 变量的值
+//     //   console.log(data);
+//     // });
+
+//     //7. 读取单条
+//     // BookModel.findOne({name: '狂飙'}, (err, data) => {
+//     //   if(err){
+//     //     console.log('读取失败~~~');
+//     //     return;
+//     //   }
+//     //   //输出 data 变量的值
+//     //   console.log(data);
+//     // })
+
+//     //根据 ID 获取文档
+//     // BookModel.findById('63f34af50cf203761ede1896', (err, data) => {
+//     //   if (err) {
+//     //     console.log('读取失败~~~');
+//     //     return;
+//     //   }
+//     //   //输出 data 变量的值
+//     //   console.log(data);
+//     // })
+
+
+//     /**
+//      * condition find
+//      */
+//     //price <= 20 的图书
+//     // BookModel.find({price: {$lt: 20}}, (err, data) => {
+//     //   if(err) {
+//     //     console.log('读取失败~~');
+//     //     return;
+//     //   }
+//     //   console.log(data);
+//     // })
+
+//     //曹雪芹 或者 余华的书
+//     // BookModel.find({$or: [{author: '曹雪芹'}, {author: '余华'}]}, (err, data) => {
+//     //   if (err) {
+//     //     console.log('读取失败~~');
+//     //     return;
+//     //   }
+//     //   console.log(data);
+//     // })
+
+//     //价格大于 30 且小于 70
+//     // BookModel.find({$and: [{price: {$gt: 30}}, {price: {$lt: 70}}]}, (err, data) => {
+//     //   if (err) {
+//     //     console.log('读取失败~~');
+//     //     return;
+//     //   }
+//     //   console.log(data);
+//     // })
+
+//     //正则表达式, 搜索书籍名称中带有 `三` 的图书
+//     // BookModel.find({name: /三/}, (err, data) => {
+//     //   if (err) {
+//     //     console.log('读取失败~~');
+//     //     return;
+//     //   }
+//     //   console.log(data);
+//     // })
+
+//     BookModel.find({ name: new RegExp('三') }, (err, data) => {
+//         if (err) {
+//             console.log('读取失败~~');
+//             return;
+//         }
+//         console.log(data);
+//     })
+// });
+
+
+/**
+  * personal select
+  */
+mongoose.connection.once('open', () => {
+    //5. 创建文档的结构对象
+    //设置集合中文档的属性以及属性值的类型
+    let BookSchema = new mongoose.Schema({
+        name: String,
+        author: String,
+        price: Number,
+        is_hot: Boolean
+    });
+
+    //6. 创建模型对象  对文档操作的封装对象    mongoose 会使用集合名称的复数, 创建集合
+    let BookModel = mongoose.model('books', BookSchema);
+
+    //7. 设置字段(1 -> true)
+    // BookModel.find().select({name: 1, author: 1, _id: 0}).exec((err, data) => {
+    //   if(err) {
+    //     console.log('查询失败~~');
+    //     return;
+    //   }
+    //   console.log(data);
+    // })
+
+    //数据排序(-1 descend, 1 ascend)
+    // BookModel.find().select({name: 1, price: 1, _id: 0}).sort({price: -1}).exec((err, data) => {
+    //   if(err) {
+    //     console.log('查询失败~~');
+    //     return;
+    //   }
+    //   console.log(data);
+    // })
+
+    //数据的截取
+    BookModel.find()
+        .select({ name: 1, price: 1, _id: 0 })
+        .sort({ price: -1 })
+        .skip(3)  //skip rows(get 4th price)
+        .limit(3)
+        .exec((err, data) => {
+            if (err) {
+                console.log('查询失败~~');
+                return;
+            }
+            console.log(data);
+        })
+
+});

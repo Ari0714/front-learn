@@ -1,0 +1,38 @@
+
+--------------------------------------------------------------shell命令-------------------------------------------------------------
+
+-- install
+npm i mongoose@6.5.0
+
+-- start
+mongod --dbpath /var/lib/mongo --logpath /var/log/mongodb/mongod.log --fork --bind_ip_all
+pkill mongod
+
+-- enter shell
+mongo
+
+-- use
+-db
+show dbs
+use test
+db
+db.dropDatabase()
+
+- collectopn
+show collections
+db.createCollection('集合名称')
+db.集合名.renameCollection('newName')
+
+- table(document)
+show tables
+db.集合名.insert(文档对象);
+db.集合名.find(查询条件)  /  db.集合名.find() (search all)
+db.集合名.update(查询条件,新的文档)  /  db.集合名.update({name:'张三'},{$set:{age:19}})
+db.集合名.remove(查询条件)
+
+
+
+
+
+--------------------------------------------------------------phoenix安装-------------------------------------------------------------
+
