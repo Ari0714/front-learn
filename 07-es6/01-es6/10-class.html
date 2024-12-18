@@ -9,11 +9,6 @@
 
     <script type="text/javascript" src="js/script.js"></script>
     <style>
-        div {
-            width: 200px;
-            height: 200px;
-            background: #58a;
-        }
     </style>
 
 </head>
@@ -22,8 +17,51 @@
 
     <!-- class -->
     <script>
-        
-        
+        //original method
+        // function Phone(brand,price) {
+        //     this.brand = brand
+        //     this.price = price
+        // }
+        // Phone.prototype.call = function () {
+        //     console.log('i am calling')
+        // }
+        // let Xiaomi = new Phone('xiaomi', 122)
+        // Xiaomi.call()
+        // console.log(Xiaomi)
+
+        //new method
+        class Phone2 {
+            constructor(brand, price) {
+                this.brand = brand
+                this.price = price
+            }
+            call() {
+                console.log('i am calling2')
+            }
+
+            get price(){
+                console.log('price is get')
+                return 'i love you'
+            }
+            set price(newVal){
+                console.log('price is reset')
+            }
+
+            //static
+            static price_s = 123
+
+        }
+        let Huawei = new Phone2('huawei', 567)
+        // console.log(Huawei)
+
+        //get\set
+        // Huawei.price = 999
+
+        //static: belong to class not obj
+        console.log(Phone2.price_s)  //123
+        console.log(Huawei.price_s)  //undifined
+
+
 
     </script>
 

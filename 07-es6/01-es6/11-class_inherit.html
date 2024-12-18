@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="text/javascript" src="js/script.js"></script>
+    <style>
+    </style>
+
+</head>
+
+<body>
+
+    <!-- class inherit -->
+    <script>
+        // origianl
+        // function Phone(brand, price){
+        //     this.brand = brand
+        //     this.price = price
+        // }
+        // Phone.prototype.call = function(){
+        //     console.log('i am calling')
+        // }
+
+        // function SmartPhone(brand, price, color){
+        //     Phone.call(this,brand,price)
+        //     this.color = color
+        // }
+        // //设置子级构造函数的原型
+        // SmartPhone.prototype = new Phone
+        // SmartPhone.prototype.constructor = SmartPhone
+        // //声明子类的方法
+        // SmartPhone.prototype.photo = function(){
+        //     console.log('i can photo')
+        // }
+        // SmartPhone.prototype.play = function(){
+        //     console.log('i can play')
+        // }
+
+        // const plus1 = new SmartPhone('plus1',123,'black')
+        // console.log(plus1)
+
+        //new 
+        class Phone2{
+            constructor(brand, price){
+                this.brand = brand
+                this.price = price
+            }
+            // father element property
+            call(){
+                console.log('i can call')
+            }
+        }
+        class SmartPhone2 extends Phone2 {
+            constructor(brand, price, color){
+                super(brand,price)
+                this.color = color
+            }
+
+            photo(){
+                console.log("拍照");
+            }
+            playGame(){
+                console.log("玩游戏");
+            }
+            //overwrite father method
+            call(){
+                console.log('我可以进行视频通话');
+            }
+        }
+
+        const xiaomi2 = new SmartPhone2('xiaomi',123,'black')
+        console.log(xiaomi2)
+        xiaomi2.call()
+        xiaomi2.photo()
+        xiaomi2.playGame()
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="text/javascript" src="js/script.js"></script>
+    <style>
+    </style>
+
+</head>
+
+<body>
+
+    <!-- class: digit extension -->
+    <script>
+
+        //maxmium digit
+        console.log(Number.EPSILON)
+
+        //1. 二进制和八进制
+        let b = 0b1010;
+        let o = 0o777;
+        let d = 100;
+        let x = 0xff;
+        console.log(x);
+
+        //isFinite
+        confirm.log(Number.isFinite(123))
+
+        //isNan
+        console.log(Number.isNaN(222))
+
+        //type transform
+        console.log(Number.parseFloat('2312aaa'))
+        console.log(Number.parseFloat('2312.12aaa'))
+
+        //isInteger
+        console.log(Number.isInteger(2.5))
+
+        //trunc
+        console.log(Math.trunc(2.5))
+
+        //+ - 0
+        console.log(Math.sign(100))
+        console.log(Math.sign(0))
+        console.log(Math.sign(-100))
+
+    </script>
+
+
+    <!-- class:  -->
+    <script>
+
+        //Object.is 判断两个值是否完全相等 
+        // console.log(Object.is(123, 123)) // == true
+        // console.log(Object.is(NaN, NaN)) // == true
+        // console.log(NaN === NaN) // ===
+
+        //2. Object.assign 对象的合并
+        const config1 = {
+            host: 'localhost',
+            port: 3306,
+            name: 'root',
+            pass: 'root',
+            test: 'test'
+        };
+        const config2 = {
+            host: 'http://atguigu.com',
+            port: 33060,
+            name: 'atguigu.com',
+            pass: 'iloveyou',
+            test2: 'test2'
+        }
+        // console.log(Object.assign(config1, config2));
+
+        //Object.setPrototypeOf 设置原型对象  Object.getPrototypeof
+        const school = {
+            name: 'shangguigu'
+        }
+        const cities = {
+            xiaoqu: ['北京', '上海', '深圳']
+        }
+        Object.setPrototypeOf(school, cities)
+        console.log(Object.getPrototypeOf(school))
+        console.log(school)
+    </script>
+
+
+    <!-- class: spread -->
+    <script>
+
+        // 『...』 扩展运算符能将『数组』转换为逗号分隔的『参数序列』
+        //声明一个数组 ...
+        const tfboys = ['易烊千玺', '王源', '王俊凯'];
+
+        // 声明一个函数
+        function chunwan() {
+            console.log(arguments);
+        }
+
+        chunwan(...tfboys);// chunwan('易烊千玺','王源','王俊凯')
+
+    </script>
+
+
+</body>
+
+</html>
