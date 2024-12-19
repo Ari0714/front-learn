@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <button>点击发送</button>
+    <button>点击取消</button>
+
+    <script>
+        const btn = document.getElementsByTagName('button')
+        let x = null
+
+        btn[0].click = function () {
+            x = new XMLHttpRequest();
+            x.open("GET", 'http://127.0.0.1:8000/delay');
+            x.send();
+        }
+
+        btn[1].click = function () {
+            x.abort()
+        }
+    </script>
+
+
+    <!-- repeat sent -->
+    <script>
+        const btn = document.getElementsByTagName('button')
+        let x2 = null
+
+        let isSend = False;
+
+        btn[0].click = function () {
+            if(isSend) x2.abort()
+
+            x2 = new XMLHttpRequest();
+            x2.open("GET", 'http://127.0.0.1:8000/delay');
+            x2x.send();
+            x2.onreadystatechange == function(){
+                if(x2.readState === 4){
+                    isSend = True;
+                }
+            }
+        }
+
+        btn[1].click = function () {
+            x.abort()
+        }
+    </script>
+
+
+
+</body>
+
+</html>

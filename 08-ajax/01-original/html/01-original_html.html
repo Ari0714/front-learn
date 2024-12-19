@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #result {
+            width: 200px;
+            height: 100px;
+            border: solid 1px #90b;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <button>点击发送请求</button>
+    <div id="result"></div>
+
+
+    <script>
+
+        const btn = document.getElementsByTagName('button')[0]
+        const div1 = document.getElementById('result')
+
+        btn.onclick = function () {
+            const xhr = new XMLHttpRequest()
+
+            xhr.open('GET', 'http://127.0.0.1:9999/server?a=100&b=200')
+
+
+            xhr.send()
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+
+                        // console.log(xhr.status);//状态码
+                        // console.log(xhr.statusText);//状态字符串
+                        // console.log(xhr.getAllResponseHeaders());//所有响应头
+                        // console.log(xhr.response);//响应体
+
+                        div1.innerHTML = xhr.response
+
+                    }
+                }
+            }
+
+
+
+
+
+        }
+
+
+    </script>
+
+
+
+</body>
+
+</html>

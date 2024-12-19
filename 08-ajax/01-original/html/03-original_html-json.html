@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #result {
+            width: 200px;
+            height: 100px;
+            border: solid 1px #90b;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="result"></div>
+
+    <script>
+        const div1 = document.getElementById('result')
+
+        window.onkeydown = function () {
+            const xhr = new XMLHttpRequest()
+
+            //timeout: ms
+            xhr.timeout = 2000;
+            xhr.ontimeout = function () {
+                alert("网络异常, 请稍后重试!!");
+            }
+            xhr.onerror = function(){
+                alert("你的网络似乎出了一些问题!");
+            }
+
+            //设置响应体数据的类型
+            xhr.responseType = 'json';
+
+            xhr.open('GET', 'http://127.0.0.1:9999/server-json?t=' + Date.now())  //solve cache issue
+
+            //3. 发送
+            xhr.send();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+
+                        // console.log(xhr.status);//状态码
+                        // console.log(xhr.statusText);//状态字符串
+                        // console.log(xhr.getAllResponseHeaders());//所有响应头
+                        // console.log(xhr.response);//响应体
+
+                        console.log(xhr.response)
+                        div1.innerHTML = xhr.response.name
+
+                    }
+                }
+            }
+
+
+
+
+
+        }
+
+
+    </script>
+
+
+
+</body>
+
+</html>
