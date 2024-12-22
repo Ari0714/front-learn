@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script crossorigin="anonymous" src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.js"></script>
+
+    <style>
+        #result {
+            width: 200px;
+            height: 100px;
+            border: solid 1px #90b;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <button>AJAX请求cors</button>
+    <div class="result"></div>
+
+    <script>
+        const btn = document.querySelector('button');
+        const result = document.querySelector('result');
+
+        btn.onclick = function () {
+            const xhr = new XMLHttpRequest()
+            xhr.open('GET', 'http://127.0.0.1:8888/cors-server')
+            xhr.send()
+            xhr.onreadystatechang = function(){
+                if (x.readyState === 4) {
+                    if (x.status >= 200 && x.status < 300) {
+                        //输出响应体
+                        console.log(x.response);
+                    }
+                }
+            }
+
+
+        }
+    </script>
+
+</body>
+
+</html>

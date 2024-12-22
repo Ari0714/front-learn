@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入react核心库 -->
+    <script type="text/javascript" src="./js/react.development.js"></script>
+    <!-- 引入react-dom，用于支持react操作DOM -->
+    <script type="text/javascript" src="./js/react-dom.development.js"></script>
+    <!-- 引入babel，用于将jsx转为js -->
+    <script type="text/javascript" src="./js/babel.min.js"></script>
+</head>
+
+<body>
+
+    <div id="test"></div>
+
+    <script type="text/babel">
+
+        /**
+         * 1.hello world
+        */
+        // const VDOM = <h1>hello react</h1>
+        // ReactDOM.render(VDOM,document.getElementById('test'))
+
+        /**
+          * 1.virtual dom 2m
+         */
+        //jsx
+        // const VDOM = (
+        //     <h1 title='test'>
+        //         <span>hello world jsx</span>
+        //     </h1>
+        // )
+        //js
+        // const VDOM2 = React.createElement('h1', { id: 'title' }, React.createElement('span', {}, 'Hello,React js'))
+        // ReactDOM.render(VDOM2, document.getElementById('test'))
+
+        /**
+        * 2.jsx grammer
+        */
+        // const myId = 'aTgUiGu'
+        // const myData = 'HeLlo,rEaCt'
+
+        // const VDOM3 = (
+        //     <div>
+        //         <h1 className='test1' id={myId.toLocaleLowerCase()}>
+        //             <span style={{ color: 'black', fontSize: '36px' }}>{myData.toLocaleLowerCase()}</span>
+        //         </h1>
+        //         <h1 className='test1' id={myId.toLocaleLowerCase()}>
+        //             <span style={{ color: 'black', fontSize: '24px' }}>{myData.toLocaleLowerCase()}</span>
+        //         </h1>
+        //         <input type="text" />
+        //     </div>
+        // )
+        // ReactDOM.render(VDOM3, document.getElementById('test'))
+        /*
+                jsx语法规则：
+                        1.定义虚拟DOM时，不要写引号。
+                        2.标签中混入JS表达式时要用{}。
+                        3.样式的类名指定不要用class，要用className。
+                        4.内联样式，要用style={{key:value}}的形式去写。
+                        5.只有一个根标签
+                        6.标签必须闭合
+                        7.标签首字母
+                                (1).若小写字母开头，则将该标签转为html中同名元素，若html中无该标签对应的同名元素，则报错。
+                                (2).若大写字母开头，react就去渲染对应的组件，若组件没有定义，则报错。
+
+         */
+
+        /**
+         * 3.exercise
+         */
+        const arr = ['Ari', 'Coco', 'Tom']
+        const VDOM4 = (
+            <div>
+                <h1>name list</h1>
+                <ul>
+                    {
+                        arr.map((a, index) => {
+                            return <li key={index}>{a}</li>
+                        })
+                    }
+
+                </ul>
+            </div>
+        )
+        ReactDOM.render(VDOM4, document.getElementById('test'))
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

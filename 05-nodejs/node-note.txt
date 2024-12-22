@@ -1,0 +1,16 @@
+--------------------------------------------------------------what-------------------------------------------------------------
+
+javascript runnning envirenment
+
+
+
+--------------------------------------------------------------use-------------------------------------------------------------
+-- install package
+install:  v14.15.1
+configure envirenment variables: 1.npm list ts-node -g, 2.add to envirenment
+
+
+-- add version
+npm i -g express
+npm i -g json-server
+npm i -g express@1.1.0

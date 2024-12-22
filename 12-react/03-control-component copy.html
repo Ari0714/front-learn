@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入react核心库 -->
+    <script type="text/javascript" src="./js/react.development.js"></script>
+    <!-- 引入react-dom，用于支持react操作DOM -->
+    <script type="text/javascript" src="./js/react-dom.development.js"></script>
+    <!-- 引入babel，用于将jsx转为js -->
+    <script type="text/javascript" src="./js/babel.min.js"></script>
+    <!-- 引入prop-types，用于对组件标签属性进行限制 -->
+    <script type="text/javascript" src="./js/prop-types.js"></script>
+</head>
+
+<body>
+
+    <div id="test"></div>
+
+    <script type="text/babel">
+
+        /**
+         * 3.control-conponent[not] element
+         *   1.not control: create and use instantly
+         */
+        class Login extends React.Component {
+            handleSubmit = () => {  //use arrow func here
+                event.preventDefault()  //prevent form submit
+                const { usernameT, passwordT } = this
+                alert(`你输入的用户名是：${username.value},你输入的密码是：${password.value}`)
+            }
+
+            render() {
+                return (
+                    <form action="https://www.baidu.com" onSubmit={this.handleSubmit}>
+                        <input ref={x => this.usernameT = x} type="text" name='username' />&nbsp;
+                        <input ref={x => this.passwordT = x} type="password" name='password' />&nbsp;
+                        <button>login</button>
+                    </form>
+                )
+            }
+        }
+        // ReactDOM.render(<Login />, document.getElementById('test'))
+
+        /**
+         * 3.control-conponent[not] element
+         *   2.control: 
+         */
+        class Login2 extends React.Component {
+            state = {
+                username: '',
+                password: ''
+            }
+            saveUsername = () => {
+                this.setState({ username: event.target.value })  //not: this.event
+            }
+            savePassword = () => {
+                this.setState({ password: event.target.value })
+            }
+
+            handleSubmit = (event) => {
+                event.preventDefault()
+                const { username, password } = this.state
+                alert(`你输入的用户名是：${username},你输入的密码是：${password}`)
+            }
+
+            render() {
+                return (
+                    <form action="https://www.baidu.com" onSubmit={this.handleSubmit}>
+                        <input onChange={this.saveUsername} type="text" name='username' />&nbsp;
+                        <input onChange={this.savePassword} type="password" name='password' />&nbsp;
+                        <button>login2</button>
+                    </form>
+                )
+            }
+        }
+        // ReactDOM.render(<Login2 />, document.getElementById('test'))
+
+
+        /**
+           * 3.kelihua
+           * 
+           */
+        /* 
+            高阶函数：如果一个函数符合下面2个规范中的任何一个，那该函数就是高阶函数。
+                            1.若A函数，接收的参数是一个函数，那么A就可以称之为高阶函数。
+                            2.若A函数，调用的返回值依然是一个函数，那么A就可以称之为高阶函数。
+                            常见的高阶函数有：Promise、setTimeout、arr.map()等等
+
+            函数的柯里化：通过函数调用继续返回函数的方式，实现多次接收参数最后统一处理的函数编码形式。 
+                function sum(a){
+                    return(b)=>{
+                        return (c)=>{
+                            return a+b+c
+                        }
+                    }
+                }
+            */
+        class Login3 extends React.Component {
+            state = {
+                username: '',
+                password: ''
+            }
+            saveFormData = (dataType) => {
+                return (event) => {
+                    this.setState({[dataType]:event.target.value})
+                }
+            }
+            handleSubmit = (event) => {
+                event.preventDefault()
+                const { username, password } = this.state
+                alert(`你输入的用户名是：${username},你输入的密码是：${password}`)
+            }
+
+            render() {
+                return (
+                    <form action="https://www.baidu.com" onSubmit={this.handleSubmit}>
+                        <input onChange={this.saveFormData('username')} type="text" name='username' />&nbsp;
+                        <input onChange={this.saveFormData('password')} type="password" name='password' />&nbsp;
+                        <button>Login3</button>
+                    </form>
+                )
+            }
+        }
+        ReactDOM.render(<Login3 />, document.getElementById('test'))
+
+
+
+    </script>
+
+
+</body>
+
+</html>

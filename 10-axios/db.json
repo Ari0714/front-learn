@@ -1,0 +1,29 @@
+{
+  "posts": [
+    {
+      "id": "2",
+      "title": "尚硅谷大厂学院上线啦",
+      "author": "小编"
+    },
+    {
+      "id": "4d03",
+      "title": "add data",
+      "author": "Ari1245"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": 1
+    },
+    {
+      "body": "喜大普奔",
+      "postId": 2,
+      "id": "2"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

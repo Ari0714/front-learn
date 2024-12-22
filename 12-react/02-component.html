@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入react核心库 -->
+    <script type="text/javascript" src="./js/react.development.js"></script>
+    <!-- 引入react-dom，用于支持react操作DOM -->
+    <script type="text/javascript" src="./js/react-dom.development.js"></script>
+    <!-- 引入babel，用于将jsx转为js -->
+    <script type="text/javascript" src="./js/babel.min.js"></script>
+    <!-- 引入prop-types，用于对组件标签属性进行限制 -->
+    <script type="text/javascript" src="./js/prop-types.js"></script>
+</head>
+
+<body>
+
+    <div id="test"></div>
+
+    <script type="text/babel">
+
+        /**
+         * 1.func component
+        */
+        //[first uppercase letter is component]
+        // function FuncComponent() {
+        //     return <h2>i ma a function component</h2>
+        // }
+        // ReactDOM.render(<FuncComponent />, document.getElementById('test'))
+
+
+        /**
+         * 2.class component
+         */
+        //[first uppercase letter is component]
+        // class ClassComponent extends React.Component {
+        //     render() {
+        //         console.log('render this:' + this)
+        //         return <h2>i ma a [class] component</h2>
+        //     }
+        // }
+        // ReactDOM.render(<ClassComponent />, document.getElementById('test'))
+
+        /**
+         * 3.component 3 main attribute
+         *   1.dont overuse def, such as manipulate self-element
+         *   2.state
+         */
+        //change weather example
+        // class Weather extends React.Component {
+        //     constructor(props) {
+        //         console.log('constructot running....')
+        //         super(props)
+        //         //init
+        //         this.state = { isHot: false, wind: 'small' }
+        //         //direct issue
+        //         this.changeWeather = this.changeWeather.bind(this)
+
+        //     }
+        //     changeWeather() {
+        //         const hot = this.state.isHot
+        //         // this.state.isHot = !hot
+        //         this.setState({ isHot: !hot })
+        //     }
+
+        //     render() {
+        //         console.log('render this:' + this)
+        //         const { isHot, wind } = this.state
+        //         return <h1 onClick={this.changeWeather}>今天天气很{isHot ? '炎热' : '凉爽'}, {wind}</h1>
+        //         // return <h2 onClick={this.changeWeather}>today weather is {hot ? 'hot' : 'cold'},{wind}</h2>
+        //     }
+        // }
+        // // wirte2
+        // class Weather2 extends React.Component {
+        //     state = { isHot: false, wind: 'small' }
+        //     //self-define method: arrow func
+        //     changeWeather = () => {
+        //         const hot = this.state.isHot
+        //         // this.state.isHot = !hot
+        //         this.setState({ isHot: !hot })
+        //     }
+
+        //     render() {
+        //         console.log('render this:' + this)
+        //         const { isHot, wind } = this.state
+        //         return <h1 onClick={this.changeWeather}>今天天气很{isHot ? '炎热' : '凉爽'}, {wind}</h1>
+        //         // return <h2 onClick={this.changeWeather}>today weather is {hot ? 'hot' : 'cold'},{wind}</h2>
+        //     }
+        // }
+        // ReactDOM.render(<Weather2 />, document.getElementById('test'))
+
+        /**
+         * 3.component 3 main attribute
+         *   2.props
+         */
+        // class Person extends React.Component {
+        //     static stapropTypes = {
+        //         name: PropTypes.string.isRequired, //限制name必传，且为字符串 //warn
+        //         sex: PropTypes.string,//限制sex为字符串
+        //         age: PropTypes.number,//限制age为数值
+        //         speak: PropTypes.func,//限制speak为函数
+        //     }
+        //     static defaultProps = {
+        //         sex: '男',//sex默认值为男
+        //         age: 18 //age默认值为18
+        //     }
+        //     render() {
+        //         const { name, age, sex } = this.props
+        //         return (
+        //             <ul>
+        //                 <li>name: {name}</li>
+        //                 <li>age: {age}</li>
+        //                 <li>sex: {sex}</li>
+        //             </ul>
+        //         )
+        //     }
+        // }
+        // Person.propTypes = {
+        //     name: PropTypes.string.isRequired, //限制name必传，且为字符串 //warn
+        //     sex: PropTypes.string,//限制sex为字符串
+        //     age: PropTypes.number,//限制age为数值
+        //     speak: PropTypes.func,//限制speak为函数
+        // }
+        // Person.defaultProps = {
+        //     sex: '男',//sex默认值为男
+        //     age: 18 //age默认值为18
+        // }
+        // ReactDOM.render(<Person name='Ari' age={12} sex='male' />, document.getElementById('test'))
+        // const ps = { name: 'Coco', age: 12 }
+        // ReactDOM.render(<Person {...ps} />, document.getElementById('test'))//later render overwrite previous
+
+        //method use props
+        // function Person2(props) {
+        //     const { name, age, sex } = props
+        //     return (  //class need render has life, method dont
+        //         <ul>
+        //             <li>name: {name}</li>
+        //             <li>age: {age}</li>
+        //             <li>sex: {sex}</li>
+        //         </ul>
+        //     )
+        // }
+        // const ps2 = { name: 'AriFunc', age: 12 }
+        // ReactDOM.render(<Person2 {...ps2} />, document.getElementById('test'))//later render overwrite previous
+
+
+        /**
+         * 3.component 3 main attribute
+         *   3.refs: bind className
+         */
+        // class Demo extends React.Component {
+
+        //string type: React automatic collect refs
+        // showData1 = () => {
+        //     const { ref1 } = this.refs
+        //     alert(ref1.value)
+        // }
+        // showData2 = () => {
+        //     const { ref2 } = this.refs
+        //     alert(ref2.value)
+        // }
+        // render() {
+        //     return (
+        //         <div>
+        //             <input ref='ref1' type="text" placeholder='please input content' />&nbsp;
+        //             <input onClick={this.showData1} type="button" value='button' />&nbsp;
+        //             <input ref='ref2' onBlur={this.showData2} type="text" />
+        //         </div>
+        //     )
+        // }
+
+        //invoke type
+        // showData1 = () => {
+        //     const { ref1 } = this
+        //     alert(ref1.value)
+        // }
+        // showData2 = () => {
+        //     const { ref2 } = this
+        //     alert(ref2.value)
+        // }
+        // render() {
+        //     return (
+        //         <div>
+        //             <input ref={x => this.ref1 = x} type="text" placeholder='please input content' />&nbsp;
+        //             <input onClick={this.showData1} type="button" value='button' />&nbsp;
+        //             <input ref={x => this.ref2 = x} onBlur={this.showData2} type="text" />
+        //         </div>
+        //     )
+        // }
+
+        //createRef type
+        myRef = React.createRef()
+        myRef2 = React.createRef()
+        showData1 = () => {
+            alert(this.myRef.current.value)
+        }
+        showData2 = () => {
+            alert(this.myRef2.current.value)
+        }
+        render() {
+            return (
+                <div>
+                    <input ref={this.myRef} type="text" placeholder='please input content' />&nbsp;
+                    <input onClick={this.showData1} type="button" value='button' />&nbsp;
+                    <input ref={this.myRef2} onBlur={this.showData2} type="text" />
+                </div>
+            )
+        }
+        ReactDOM.render(<Demo />, document.getElementById('test'))
+
+
+    </script>
+
+
+</body>
+
+</html>

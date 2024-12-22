@@ -1,0 +1,23 @@
+
+--------------------------------------------------------------what-------------------------------------------------------------
+
+1.frontend most popluar [ajax] repository
+2.base xhr+promise async
+3.browse / node both use
+4.support req/rep intercept, support req cancel
+5.batch send multiple req
+
+
+--------------------------------------------------------------use-------------------------------------------------------------
+
+---start 
+npm i -g axios
+
+---json-server
+https://github.com/typicode/json-server
+npx json-server db.json
+
+
+-- min package
+https://www.bootcdn.cn/axios/
+

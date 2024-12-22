@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link crossorigin='anonymous' href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h2 class="page-header">Promise 封装 AJAX 操作</h2>
+        <button class="btn btn-primary" id="btn">点击发送 AJAX</button>
+    </div>
+
+    <script>
+
+        function getRandom(a, b) {
+            return Math.ceil(Math.random() * (b - a + 1)) + a - 1;
+        }
+
+        //ajax
+        const btn = document.getElementById('btn')
+        btn.addEventListener('click', function () {
+
+            const p = new Promise((resolve, reject) => {
+
+                const xhr = new XMLHttpRequest()
+                xhr.open('GET', 'https://api.apiopen.top/getJoke')
+                xhr.send()
+
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4) {
+                        //判断响应状态码 2xx   
+                        if (xhr.status >= 200 && xhr.status < 300) {
+                            //控制台输出响应体
+                            resolve(xhr.response);
+                        } else {
+                            //控制台输出响应状态码
+                            reject(xhr.status);
+                        }
+                    }
+                }
+            })
+
+            //invoke
+            // p.then((value) => {
+            //     alert('this is Promise:' + value)
+            // }, (reason) => {
+            //     alert('this is Promise:' + reason)
+            // })
+        })
+
+
+        //pack ajax
+        function sendAjax(url) {
+            return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest()
+                xhr.open('GET', url)
+                xhr.send()
+
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4) {
+                        //判断响应状态码 2xx   
+                        if (xhr.status >= 200 && xhr.status < 300) {
+                            //控制台输出响应体
+                            resolve(xhr.response);
+                        } else {
+                            //控制台输出响应状态码
+                            reject(xhr.status);
+                        }
+                    }
+                }
+            })
+        }
+        sendAjax('https://api.apiopen.top/getJok')
+        .then((value)=>{
+            console.log(value)
+        },(reason)=>{
+            console.log(reason)
+        })
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

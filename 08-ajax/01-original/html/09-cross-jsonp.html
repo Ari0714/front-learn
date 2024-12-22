@@ -7,34 +7,35 @@
     <title>Document</title>
 
     <script crossorigin="anonymous" src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.js"></script>
+
+
+
 </head>
 
 <body>
 
-    <button>AJAX请求</button>
-    <script>
-        //文档地址
-        //https://developer.mozilla.org/zh-CN/docs/Web/API/WindowOrWorkerGlobalScope/fetch
-        
-        const btn = document.querySelector('button');
+    username: <input type="text" id="username">
+    <p></p>
 
-        btn.onclick = function(){
-            fetch('http://127.0.0.1:9999/fetch-server?vip=10', {
-                //请求方法
-                method: 'POST',
-                //请求头
-                headers: {
-                    name:'atguigu'
-                },
-                //请求体
-                body: 'username=admin&password=admin'
-            }).then(response => {
-                // return response.text();
-                return response.json();
-            }).then(response=>{
-                console.log(response);
-            });
+    <script>
+
+        const input = document.getElementById('username')
+        const p = document.getElementsByTagName('p')[0]
+
+        //define func
+        function handle(data){
+            input.style.border = "solid 1px red" 
+            p.innerHTML = data.msg
         }
+
+        //bind event
+        input.onblur = function(){
+            let name = this.value
+            const sc = document.createElement('script')
+            sc.src = 'http://127.0.0.1:8888/check-username'
+            document.body.appendChild(sc)
+        }
+
     </script>
 
 </body>

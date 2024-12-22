@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link crossorigin="anonymous" href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+        rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="page-header">基本使用</h2>
+        <button class="btn btn-primary"> 发送GET请求 </button>
+        <button class="btn btn-warning"> 发送POST请求 </button>
+        <button class="btn btn-success"> 发送 PUT 请求 </button>
+        <button class="btn btn-danger"> 发送 DELETE 请求 </button>
+    </div>
+
+    <script>
+        // console.log(axios)
+
+        //get 
+        const btns = document.getElementsByTagName('button')
+        btns[0].onclick = function () {
+            alert('aaa')
+            axios({
+                method: 'GET',
+                url: 'http://localhost:3000/posts/2'
+            }).then(res => {
+                console.log(res)
+            })
+        }
+
+        //post
+        btns[1].onclick = function () {
+            alert('bbb')
+            axios({
+                method: 'POST',
+                url: 'http://localhost:3000/posts',
+                data: {
+                    "title": "add data",
+                    "author": "Ari1245"
+                }
+            }).then(res => {
+                console.log(res)
+            })
+        }
+
+        //put
+        btns[2].onclick = function () {
+            alert('ccc')
+            axios({
+                method: 'PUT',
+                url: 'http://localhost:3000/posts/1',
+                data: {
+                    "title": "add data put",
+                    "author": "Ari1245ddd"
+                }
+            }).then(res => {
+                console.log(res)
+            })
+        }
+
+        //delete
+        btns[3].onclick = function () {
+            alert('ddd')
+            axios({
+                method: 'DELETE',
+                url: 'http://localhost:3000/posts/1'
+            }).then(res => {
+                console.log(res)
+            })
+        }
+
+        //other usage
+        btns[0].onclick = function () {
+            alert('oyher1')
+            axios.request({
+                method: 'GET',
+                url: 'http://localhost:3000/posts/2'
+            }).then(res => {
+                console.log(res)
+            })
+        }
+
+        btns[1].onclick = function () {
+            // axios()
+            axios.post(
+                'http://localhost:3000/comments',
+                {
+                    "body": "喜大普奔",
+                    "postId": 2
+                }).then(response => {
+                    console.log(response);
+                })
+        }
+
+        //default configuration
+        axios.defaults.method = 'GET';//设置默认的请求类型为 GET
+        axios.defaults.baseURL = 'http://localhost:3000';//设置基础 URL
+        axios.defaults.params = { id: 100 };
+        axios.defaults.timeout = 3000;//
+
+        //create entity: use in multiple http server
+        const axios1 = axios.create({
+            baseURL: 'http://localhost:3000',
+            timeout: 3000
+        })
+        //create entity
+        const axios2 = axios.create({
+            baseURL: 'http://xxxx2:3000',
+            timeout: 3000
+        })
+        //这里 axios1 与 axios 对象的功能几近是一样的
+        axios1({
+            url: '/getJoke',   //abbreviation(omit) http adderss
+        }).then(response => {
+            console.log(response);
+        });
+        axios2.get('/getJoke').then(response => {
+            console.log(response.data)
+        })
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

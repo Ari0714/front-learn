@@ -1,0 +1,38 @@
+
+--------------------------------------------------------------what-------------------------------------------------------------
+
+官网
+1.英文官网: https://reactjs.org/
+2.中文官网: https://react.docschina.org/
+
+
+介绍描述
+1.用于构建 Web 和原生交互界面的库(official web), The library for web and native user interfaces
+1.用于动态构建用户界面的 JavaScript 库(只关注于视图)
+2.由Facebook开源
+
+React的特点
+1.声明式编码
+2.组件化编码
+3.React Native 编写原生应用
+4.高效（优秀的Diffing算法）
+
+React高效的原因
+1.使用虚拟(virtual)DOM, 不总是直接操作页面真实DOM。
+2.DOM Diffing算法, 最小化页面重绘。
+
+
+
+
+--------------------------------------------------------------use-------------------------------------------------------------
+
+---create-react-app
+
+---install
+npm i -g create-react-app
+
+---init project
+create-react-app hello-react
+
+---start project
+npm start
